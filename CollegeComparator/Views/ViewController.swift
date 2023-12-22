@@ -69,12 +69,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let tabCtrl = segue.destination as! UITabBarController
         
         let destinationVC = tabCtrl.viewControllers![0] as! DetailViewController // Assuming home view controller is in the first tab, else update the array index
+        
         destinationVC.school = selectedSchool;
         
         destinationVC.title = "Homepage"
         
         let navVC = tabCtrl.viewControllers![1]
+        
         let navVC2 = tabCtrl.viewControllers![2]
+        
         let navVC3 = tabCtrl.viewControllers![3]
         
         navVC.title = "Major Earnings"

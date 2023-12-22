@@ -27,6 +27,7 @@
 		B918C9FC2B35122600CA80CA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B918C9FB2B35122600CA80CA /* SDWebImage */; };
 		B918C9FE2B35122600CA80CA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B918C9FD2B35122600CA80CA /* SDWebImageMapKit */; };
 		B918CA002B35127300CA80CA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B918C9FF2B35127300CA80CA /* Charts.framework */; };
+		B918CA062B35451500CA80CA /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918CA052B35451500CA80CA /* tabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B918C9F62B35049800CA80CA /* BarViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController2.swift; sourceTree = "<group>"; };
 		B918C9F82B3504A900CA80CA /* BarViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController3.swift; sourceTree = "<group>"; };
 		B918C9FF2B35127300CA80CA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
+		B918CA052B35451500CA80CA /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				B918C9F42B35048000CA80CA /* BarViewController.swift */,
 				B918C9F62B35049800CA80CA /* BarViewController2.swift */,
 				B918C9F82B3504A900CA80CA /* BarViewController3.swift */,
+				B918CA052B35451500CA80CA /* tabBarViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */,
 				B918C9E52B35029900CA80CA /* Constants.swift in Sources */,
 				B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */,
+				B918CA062B35451500CA80CA /* tabBarViewController.swift in Sources */,
 				B918C9F52B35048000CA80CA /* BarViewController.swift in Sources */,
 				B918C9F92B3504A900CA80CA /* BarViewController3.swift in Sources */,
 				B918C9F72B35049800CA80CA /* BarViewController2.swift in Sources */,
