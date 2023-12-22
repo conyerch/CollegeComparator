@@ -34,6 +34,8 @@ struct Schools: Decodable {
     var percentages:[(String, Double)] = []
     var scores:[(String, Double)] = []
     var ave_fte:Int?
+    var med_10yr:Int?
+    var acc_rate:Double?
     
     // latest.admissions.sat_scores.average.overall,school.faculty_salary,latest.cost.attendance.academic_year"
     
@@ -62,7 +64,8 @@ struct Schools: Decodable {
         case perc_humanities = "latest.academics.program_percentage.humanities"
         case perc_english = "latest.academics.program_percentage.english"
         case ave_fte = "latest.school.instructional_expenditure_per_fte"
-        
+        case med_10yr = "latest.earnings.10_yrs_after_entry.median"
+        case acc_rate = "latest.admissions.admission_rate.overall"
     }
     
     init (from decoder: Decoder) throws {
@@ -140,6 +143,24 @@ struct Schools: Decodable {
             self.sat_75_read = 0
         }
         
+        do {
+            
+            self.acc_rate = try container.decode(Double.self, forKey: .acc_rate)
+        
+        }
+        catch {
+            self.acc_rate = 100.0
+        }
+        
+        do {
+            
+            self.med_10yr = try container.decode(Int.self, forKey: .med_10yr)
+        
+        }
+        catch {
+            self.med_10yr = 0
+        }
+        
         self.perc_engin = try container.decode(Double.self, forKey: .perc_engin)
         
         self.perc_comp = try container.decode(Double.self, forKey: .perc_comp)
@@ -164,7 +185,6 @@ struct Schools: Decodable {
         self.percentages.append(("English", perc_english!))
         self.percentages.append(("History", perc_hist!))
         self.percentages.append(("Business", perc_business!))
-        
         
         self.scores.append(("SAT Writing 25", Double(sat_25_write!)))
         

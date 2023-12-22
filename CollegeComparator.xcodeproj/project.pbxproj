@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		888B76AAD7BB11E4DDEF5484 /* Pods_CollegeComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BF5CAAF468AB1EC4008993 /* Pods_CollegeComparator.framework */; };
+		B90AC76F2B35DCE200880AFF /* Trends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AC76E2B35DCE200880AFF /* Trends.swift */; };
 		B918C9CB2B35015500CA80CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CA2B35015500CA80CA /* AppDelegate.swift */; };
 		B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CC2B35015500CA80CA /* SceneDelegate.swift */; };
 		B918C9CF2B35015500CA80CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CE2B35015500CA80CA /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		05BF5CAAF468AB1EC4008993 /* Pods_CollegeComparator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollegeComparator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		382D5401B84B14D2C6103C44 /* Pods-CollegeComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeComparator.release.xcconfig"; path = "Target Support Files/Pods-CollegeComparator/Pods-CollegeComparator.release.xcconfig"; sourceTree = "<group>"; };
 		A3E32BC10D2DA74B9D9252C8 /* Pods-CollegeComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeComparator.debug.xcconfig"; path = "Target Support Files/Pods-CollegeComparator/Pods-CollegeComparator.debug.xcconfig"; sourceTree = "<group>"; };
+		B90AC76E2B35DCE200880AFF /* Trends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trends.swift; sourceTree = "<group>"; };
 		B918C9C72B35015500CA80CA /* CollegeComparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeComparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B918C9CA2B35015500CA80CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B918C9CC2B35015500CA80CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B918C9EA2B35035400CA80CA /* Response.swift */,
 				B918C9EC2B35035E00CA80CA /* Earnings.swift */,
 				B918C9EE2B35039C00CA80CA /* Model.swift */,
+				B90AC76E2B35DCE200880AFF /* Trends.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				B918C9CB2B35015500CA80CA /* AppDelegate.swift in Sources */,
 				B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */,
 				B918C9E52B35029900CA80CA /* Constants.swift in Sources */,
+				B90AC76F2B35DCE200880AFF /* Trends.swift in Sources */,
 				B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */,
 				B918CA082B354A3C00CA80CA /* HomePageViewController.swift in Sources */,
 				B918CA062B35451500CA80CA /* tabBarViewController.swift in Sources */,

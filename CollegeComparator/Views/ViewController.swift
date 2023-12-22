@@ -138,7 +138,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func getSchools(_ schools: [Schools]) {
         self.colleges = schools
-        
         tableView.reloadData()
     }
     

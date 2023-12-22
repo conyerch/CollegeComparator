@@ -1,21 +1,22 @@
 //
-//  Model.swift
+//  Trends.swift
 //  CollegeComparator
 //
-//  Created by christopher conyersIV on 12/21/23.
+//  Created by christopher conyersIV on 12/22/23.
 //
 
 import Foundation
 
-protocol ModelDel {
-    func getSchools(_ schools:[Schools])
+protocol TrendsDel {
+    func getSchool(_ schools:[Schools])
 }
 
-class Model {
+class Trends {
     
     var delegate:ModelDel?
     
-    func getSchools() {
+    func getSchool() {
+        
         
         let url = URL(string: Constants.API_URL)
         
@@ -36,11 +37,7 @@ class Model {
                 
                 let response = try decoder.decode(Response.self, from: data!)
                 
-                //dump(response)
-                
                 if response.results != nil {
-                    
-                    //print("not nil")
                     
                     DispatchQueue.main.async {
                         self.delegate?.getSchools(response.results!)
@@ -62,4 +59,3 @@ class Model {
             
         }
     }
-
