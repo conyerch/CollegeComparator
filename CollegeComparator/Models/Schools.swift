@@ -33,6 +33,7 @@ struct Schools: Decodable {
     var perc_english:Double?
     var percentages:[(String, Double)] = []
     var scores:[(String, Double)] = []
+    var ave_fte:Int?
     
     // latest.admissions.sat_scores.average.overall,school.faculty_salary,latest.cost.attendance.academic_year"
     
@@ -60,6 +61,7 @@ struct Schools: Decodable {
         case perc_health = "latest.academics.program_percentage.health"
         case perc_humanities = "latest.academics.program_percentage.humanities"
         case perc_english = "latest.academics.program_percentage.english"
+        case ave_fte = "latest.school.instructional_expenditure_per_fte"
         
     }
     
@@ -78,6 +80,8 @@ struct Schools: Decodable {
         self.web = try container.decode(String.self, forKey: .web)
         
         self.facSalary = try container.decode(Int.self, forKey: .facSalary)
+        
+        self.ave_fte = try container.decode(Int.self, forKey: .ave_fte)
         
         // try to get SAT/cost fields, throw error if unretrievable
         do {

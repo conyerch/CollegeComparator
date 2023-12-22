@@ -41,7 +41,7 @@ class CollegeTableViewCell: UITableViewCell {
         
         self.collegeName.text = school?.schoolName
         
-        let mys = String(describing: school?.studentSize)
+        let mys = "Student Body Size: " + String(describing: school!.studentSize!)
         
         self.studentSize.text = mys
         

@@ -11,16 +11,18 @@ import Charts
 
 class DetailViewController: UIViewController {
 
-    
+    @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var satLabel: UILabel!
-
     
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var visitLabel: UILabel!
+    
     var school: Schools?
     
     override func viewDidLoad() {
@@ -36,11 +38,21 @@ class DetailViewController: UIViewController {
         
         // set the fields
         
+        stackView.setCustomSpacing(20, after: titleLabel)
+        
         titleLabel.text = school!.schoolName
         
-        satLabel.text = String(describing: school!.sat)
+        titleLabel.textColor = .black
         
-        textView.text = String(describing: school!.facSalary)
+        titleLabel.textAlignment = .center
+        
+        satLabel.text = "Descriptive Statistics"
+        
+        visitLabel.text = "Visit " + school!.schoolName + "'s Homepage" + "\n"
+        
+        visitLabel.textAlignment = .center
+        
+        textView.text = "Average Faculty Compensation: " + String(describing: school!.facSalary!) + "\n" + "Average Student SAT Score: " + String(describing: school!.sat!) + "\n" + "Latest Tution Cost: " + String(describing: school!.cost!) + "\n" + "Average Expenditure Per Student: " + String(describing: school!.ave_fte!) + "\n"
         
         // guard that we received a valid url
         guard school?.web != nil else {
