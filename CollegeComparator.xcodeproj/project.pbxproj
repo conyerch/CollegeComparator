@@ -14,6 +14,16 @@
 		B918C9D22B35015500CA80CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B918C9D02B35015500CA80CA /* Main.storyboard */; };
 		B918C9D42B35015700CA80CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B918C9D32B35015700CA80CA /* Assets.xcassets */; };
 		B918C9D72B35015700CA80CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B918C9D52B35015700CA80CA /* LaunchScreen.storyboard */; };
+		B918C9E52B35029900CA80CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9E42B35029900CA80CA /* Constants.swift */; };
+		B918C9E92B35034600CA80CA /* Schools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9E82B35034600CA80CA /* Schools.swift */; };
+		B918C9EB2B35035400CA80CA /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9EA2B35035400CA80CA /* Response.swift */; };
+		B918C9ED2B35035E00CA80CA /* Earnings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9EC2B35035E00CA80CA /* Earnings.swift */; };
+		B918C9EF2B35039C00CA80CA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9EE2B35039C00CA80CA /* Model.swift */; };
+		B918C9F12B35043C00CA80CA /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F02B35043C00CA80CA /* CollegeTableViewCell.swift */; };
+		B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F22B35045A00CA80CA /* DetailViewController.swift */; };
+		B918C9F52B35048000CA80CA /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F42B35048000CA80CA /* BarViewController.swift */; };
+		B918C9F72B35049800CA80CA /* BarViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F62B35049800CA80CA /* BarViewController2.swift */; };
+		B918C9F92B3504A900CA80CA /* BarViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F82B3504A900CA80CA /* BarViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,16 @@
 		B918C9D32B35015700CA80CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B918C9D62B35015700CA80CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B918C9D82B35015700CA80CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B918C9E42B35029900CA80CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B918C9E82B35034600CA80CA /* Schools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schools.swift; sourceTree = "<group>"; };
+		B918C9EA2B35035400CA80CA /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B918C9EC2B35035E00CA80CA /* Earnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earnings.swift; sourceTree = "<group>"; };
+		B918C9EE2B35039C00CA80CA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B918C9F02B35043C00CA80CA /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
+		B918C9F22B35045A00CA80CA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B918C9F42B35048000CA80CA /* BarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
+		B918C9F62B35049800CA80CA /* BarViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController2.swift; sourceTree = "<group>"; };
+		B918C9F82B3504A900CA80CA /* BarViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +68,6 @@
 				A3E32BC10D2DA74B9D9252C8 /* Pods-CollegeComparator.debug.xcconfig */,
 				382D5401B84B14D2C6103C44 /* Pods-CollegeComparator.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,13 +94,63 @@
 			children = (
 				B918C9CA2B35015500CA80CA /* AppDelegate.swift */,
 				B918C9CC2B35015500CA80CA /* SceneDelegate.swift */,
-				B918C9CE2B35015500CA80CA /* ViewController.swift */,
-				B918C9D02B35015500CA80CA /* Main.storyboard */,
-				B918C9D32B35015700CA80CA /* Assets.xcassets */,
-				B918C9D52B35015700CA80CA /* LaunchScreen.storyboard */,
+				B918C9DF2B35020700CA80CA /* Models */,
+				B918C9DE2B3501FE00CA80CA /* Constants */,
+				B918C9E32B35023400CA80CA /* Visuals */,
+				B918C9E22B35022F00CA80CA /* Views */,
+				B918C9E12B35022700CA80CA /* Charts */,
 				B918C9D82B35015700CA80CA /* Info.plist */,
 			);
 			path = CollegeComparator;
+			sourceTree = "<group>";
+		};
+		B918C9DE2B3501FE00CA80CA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B918C9D32B35015700CA80CA /* Assets.xcassets */,
+				B918C9E42B35029900CA80CA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B918C9DF2B35020700CA80CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B918C9E82B35034600CA80CA /* Schools.swift */,
+				B918C9EA2B35035400CA80CA /* Response.swift */,
+				B918C9EC2B35035E00CA80CA /* Earnings.swift */,
+				B918C9EE2B35039C00CA80CA /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B918C9E12B35022700CA80CA /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		B918C9E22B35022F00CA80CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B918C9CE2B35015500CA80CA /* ViewController.swift */,
+				B918C9F02B35043C00CA80CA /* CollegeTableViewCell.swift */,
+				B918C9F22B35045A00CA80CA /* DetailViewController.swift */,
+				B918C9F42B35048000CA80CA /* BarViewController.swift */,
+				B918C9F62B35049800CA80CA /* BarViewController2.swift */,
+				B918C9F82B3504A900CA80CA /* BarViewController3.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B918C9E32B35023400CA80CA /* Visuals */ = {
+			isa = PBXGroup;
+			children = (
+				B918C9D02B35015500CA80CA /* Main.storyboard */,
+				B918C9D52B35015700CA80CA /* LaunchScreen.storyboard */,
+			);
+			path = Visuals;
 			sourceTree = "<group>";
 		};
 		F82F824729C2D1C41F64E1EF /* Frameworks */ = {
@@ -207,9 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B918C9ED2B35035E00CA80CA /* Earnings.swift in Sources */,
 				B918C9CF2B35015500CA80CA /* ViewController.swift in Sources */,
+				B918C9F12B35043C00CA80CA /* CollegeTableViewCell.swift in Sources */,
+				B918C9E92B35034600CA80CA /* Schools.swift in Sources */,
 				B918C9CB2B35015500CA80CA /* AppDelegate.swift in Sources */,
 				B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */,
+				B918C9E52B35029900CA80CA /* Constants.swift in Sources */,
+				B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */,
+				B918C9F52B35048000CA80CA /* BarViewController.swift in Sources */,
+				B918C9F92B3504A900CA80CA /* BarViewController3.swift in Sources */,
+				B918C9F72B35049800CA80CA /* BarViewController2.swift in Sources */,
+				B918C9EB2B35035400CA80CA /* Response.swift in Sources */,
+				B918C9EF2B35039C00CA80CA /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
