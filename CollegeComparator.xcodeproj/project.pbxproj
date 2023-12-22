@@ -24,6 +24,9 @@
 		B918C9F52B35048000CA80CA /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F42B35048000CA80CA /* BarViewController.swift */; };
 		B918C9F72B35049800CA80CA /* BarViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F62B35049800CA80CA /* BarViewController2.swift */; };
 		B918C9F92B3504A900CA80CA /* BarViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9F82B3504A900CA80CA /* BarViewController3.swift */; };
+		B918C9FC2B35122600CA80CA /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B918C9FB2B35122600CA80CA /* SDWebImage */; };
+		B918C9FE2B35122600CA80CA /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B918C9FD2B35122600CA80CA /* SDWebImageMapKit */; };
+		B918CA002B35127300CA80CA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B918C9FF2B35127300CA80CA /* Charts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,7 @@
 		B918C9F42B35048000CA80CA /* BarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		B918C9F62B35049800CA80CA /* BarViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController2.swift; sourceTree = "<group>"; };
 		B918C9F82B3504A900CA80CA /* BarViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController3.swift; sourceTree = "<group>"; };
+		B918C9FF2B35127300CA80CA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B918C9FC2B35122600CA80CA /* SDWebImage in Frameworks */,
+				B918CA002B35127300CA80CA /* Charts.framework in Frameworks */,
+				B918C9FE2B35122600CA80CA /* SDWebImageMapKit in Frameworks */,
 				888B76AAD7BB11E4DDEF5484 /* Pods_CollegeComparator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +163,7 @@
 		F82F824729C2D1C41F64E1EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B918C9FF2B35127300CA80CA /* Charts.framework */,
 				05BF5CAAF468AB1EC4008993 /* Pods_CollegeComparator.framework */,
 			);
 			name = Frameworks;
@@ -179,6 +187,10 @@
 			dependencies = (
 			);
 			name = CollegeComparator;
+			packageProductDependencies = (
+				B918C9FB2B35122600CA80CA /* SDWebImage */,
+				B918C9FD2B35122600CA80CA /* SDWebImageMapKit */,
+			);
 			productName = CollegeComparator;
 			productReference = B918C9C72B35015500CA80CA /* CollegeComparator.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +219,9 @@
 				Base,
 			);
 			mainGroup = B918C9BE2B35015500CA80CA;
+			packageReferences = (
+				B918C9FA2B35122600CA80CA /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = B918C9C82B35015500CA80CA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -351,7 +366,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -414,7 +429,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -513,6 +528,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B918C9FA2B35122600CA80CA /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B918C9FB2B35122600CA80CA /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B918C9FA2B35122600CA80CA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		B918C9FD2B35122600CA80CA /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B918C9FA2B35122600CA80CA /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B918C9BF2B35015500CA80CA /* Project object */;
 }
