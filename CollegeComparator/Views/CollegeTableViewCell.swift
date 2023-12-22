@@ -9,13 +9,11 @@ import UIKit
 
 class CollegeTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var urlImageView: UIImageView!
-    
+
     
     @IBOutlet weak var collegeName: UILabel!
     
-    
+  
     @IBOutlet weak var studentSize: UILabel!
     
     var school:Schools?
@@ -47,36 +45,6 @@ class CollegeTableViewCell: UITableViewCell {
         
         self.studentSize.text = mys
         
-        let url = URL(string: Constants.genImage2)
-        
-        let session = URLSession.shared
-        
-        // set generic image
-        
-        let dataTask = session.dataTask(with: url!) { (data, response, error) in
-            
-            if error == nil && data != nil {
-                
-                if url?.absoluteString != Constants.genImage2 {
-                    
-                    // video cell has been recycled
-                    return
-                }
-                
-                let image = UIImage(data: data!)
-                
-                if self.urlImageView != nil {
-                    
-                    DispatchQueue.main.async {
-                        self.urlImageView.image = image
-                        
-                    }
-                    
-                }
-            }
-        }
-        
-        dataTask.resume()
         
     }
 

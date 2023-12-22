@@ -81,11 +81,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         graphVC.school = selectedSchool;
         
-        let graphVC2 = navVC2.children[0] as! BarViewController3
+        let graphVC2 = navVC2.children[0] as! BarViewController2
         
         graphVC2.school = selectedSchool;
         
-        let graphVC3 = navVC3.children[0] as! BarViewController2
+        let graphVC3 = navVC3.children[0] as! BarViewController3
         
         graphVC3.school = selectedSchool;
         

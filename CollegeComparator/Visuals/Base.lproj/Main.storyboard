@@ -43,15 +43,15 @@
             </objects>
             <point key="canvasLocation" x="844" y="-218"/>
         </scene>
-        <!--View Controller-->
+        <!--Schools-->
         <scene sceneID="4VH-RZ-yol">
             <objects>
-                <viewController id="rp5-Bs-65Q" sceneMemberID="viewController">
+                <viewController id="rp5-Bs-65Q" customClass="ViewController" customModule="CollegeComparator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gjO-YV-uAH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPp-Q2-onY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PPp-Q2-onY">
                                 <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -91,6 +91,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="collegeName" destination="AVI-EX-Vxu" id="5qM-zD-9IQ"/>
+                                            <outlet property="studentSize" destination="kzW-P2-vLA" id="8hZ-4R-N6O"/>
                                             <segue destination="3o7-sp-pw1" kind="show" id="jI3-C0-y7s"/>
                                         </connections>
                                     </tableViewCell>
@@ -106,7 +108,10 @@
                             <constraint firstItem="k26-rW-9gC" firstAttribute="trailing" secondItem="PPp-Q2-onY" secondAttribute="trailing" id="oNt-Xr-TGQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kjq-BD-10e"/>
+                    <navigationItem key="navigationItem" title="Schools" id="kjq-BD-10e"/>
+                    <connections>
+                        <outlet property="tableView" destination="PPp-Q2-onY" id="AmH-fH-qNw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkT-we-11Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,6 +171,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iAu-tN-wvF"/>
+                    <connections>
+                        <outlet property="satLabel" destination="Nuf-uE-E4k" id="cRZ-RR-G06"/>
+                        <outlet property="textView" destination="zij-aL-ONa" id="tdj-oh-6Gk"/>
+                        <outlet property="titleLabel" destination="mUu-pO-ohI" id="Q7o-tx-2y3"/>
+                        <outlet property="webView" destination="Wut-rZ-ANk" id="iZQ-l7-mXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntr-QS-gbP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

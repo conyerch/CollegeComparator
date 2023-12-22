@@ -12,14 +12,15 @@ import Charts
 class DetailViewController: UIViewController {
 
     
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var satLabel: UILabel!
+
     
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var textView: UITextView!
-    
     var school: Schools?
     
     override func viewDidLoad() {
