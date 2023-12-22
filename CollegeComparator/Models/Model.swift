@@ -11,7 +11,6 @@ protocol ModelDel {
     func getSchools(_ schools:[Schools])
 }
 
-
 class Model {
     
     var delegate:ModelDel?

@@ -227,7 +227,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bnu-tC-XEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="2113"/>
+            <point key="canvasLocation" x="459" y="2113"/>
         </scene>
         <!--Top Earnings by Major-->
         <scene sceneID="XLS-oq-6XV">
@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqs-qb-n7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="2891"/>
+            <point key="canvasLocation" x="459" y="2881"/>
         </scene>
         <!--Most Common Majors-->
         <scene sceneID="VkD-tR-fJN">
@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wji-lP-bxM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="2891"/>
+            <point key="canvasLocation" x="1439" y="2881"/>
         </scene>
         <!--SAT Percentiles-->
         <scene sceneID="rG5-gW-VVp">
@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ec-wS-QBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2514" y="2881"/>
+            <point key="canvasLocation" x="2389" y="2881"/>
         </scene>
         <!--Major Breakdown-->
         <scene sceneID="4lU-du-eCl">
@@ -292,12 +292,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTP-TL-YVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="2113"/>
+            <point key="canvasLocation" x="1439" y="2113"/>
         </scene>
         <!--College Comparator-->
         <scene sceneID="1z5-72-CGB">
             <objects>
-                <viewController title="College Comparator" id="oBv-pG-7IR" sceneMemberID="viewController">
+                <viewController title="College Comparator" id="oBv-pG-7IR" customClass="HomePageViewController" customModule="CollegeComparator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNe-Pa-0gU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -331,10 +331,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gdn-ia-hEb"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="LJy-4z-661" id="y9Y-mN-qtd"/>
+                        <outlet property="welcomeText" destination="fsY-Lc-o3v" id="nUw-BN-hyk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oil-Kw-ezd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-811" y="550"/>
+            <point key="canvasLocation" x="-811" y="599"/>
         </scene>
         <!--Item-->
         <scene sceneID="rE2-bB-O7K">
@@ -368,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="to1-0W-7ux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2515" y="2113"/>
+            <point key="canvasLocation" x="2390" y="2113"/>
         </scene>
     </scenes>
     <resources>
