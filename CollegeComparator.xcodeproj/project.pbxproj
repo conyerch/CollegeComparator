@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		888B76AAD7BB11E4DDEF5484 /* Pods_CollegeComparator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05BF5CAAF468AB1EC4008993 /* Pods_CollegeComparator.framework */; };
 		B90AC76F2B35DCE200880AFF /* Trends.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AC76E2B35DCE200880AFF /* Trends.swift */; };
+		B90AC7752B37598B00880AFF /* EarningsChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AC7742B37598B00880AFF /* EarningsChartTableViewCell.swift */; };
+		B90AC7772B37599B00880AFF /* AcceptanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AC7762B37599B00880AFF /* AcceptanceTableViewCell.swift */; };
+		B90AC7792B3759A400880AFF /* CostPerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90AC7782B3759A400880AFF /* CostPerTableViewCell.swift */; };
 		B918C9CB2B35015500CA80CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CA2B35015500CA80CA /* AppDelegate.swift */; };
 		B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CC2B35015500CA80CA /* SceneDelegate.swift */; };
 		B918C9CF2B35015500CA80CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918C9CE2B35015500CA80CA /* ViewController.swift */; };
@@ -37,6 +40,9 @@
 		382D5401B84B14D2C6103C44 /* Pods-CollegeComparator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeComparator.release.xcconfig"; path = "Target Support Files/Pods-CollegeComparator/Pods-CollegeComparator.release.xcconfig"; sourceTree = "<group>"; };
 		A3E32BC10D2DA74B9D9252C8 /* Pods-CollegeComparator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CollegeComparator.debug.xcconfig"; path = "Target Support Files/Pods-CollegeComparator/Pods-CollegeComparator.debug.xcconfig"; sourceTree = "<group>"; };
 		B90AC76E2B35DCE200880AFF /* Trends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trends.swift; sourceTree = "<group>"; };
+		B90AC7742B37598B00880AFF /* EarningsChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsChartTableViewCell.swift; sourceTree = "<group>"; };
+		B90AC7762B37599B00880AFF /* AcceptanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTableViewCell.swift; sourceTree = "<group>"; };
+		B90AC7782B3759A400880AFF /* CostPerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPerTableViewCell.swift; sourceTree = "<group>"; };
 		B918C9C72B35015500CA80CA /* CollegeComparator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeComparator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B918C9CA2B35015500CA80CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B918C9CC2B35015500CA80CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				B918C9F82B3504A900CA80CA /* BarViewController3.swift */,
 				B918CA052B35451500CA80CA /* tabBarViewController.swift */,
 				B918CA072B354A3C00CA80CA /* HomePageViewController.swift */,
+				B90AC7742B37598B00880AFF /* EarningsChartTableViewCell.swift */,
+				B90AC7762B37599B00880AFF /* AcceptanceTableViewCell.swift */,
+				B90AC7782B3759A400880AFF /* CostPerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +312,7 @@
 				B918C9ED2B35035E00CA80CA /* Earnings.swift in Sources */,
 				B918C9CF2B35015500CA80CA /* ViewController.swift in Sources */,
 				B918C9F12B35043C00CA80CA /* CollegeTableViewCell.swift in Sources */,
+				B90AC7792B3759A400880AFF /* CostPerTableViewCell.swift in Sources */,
 				B918C9E92B35034600CA80CA /* Schools.swift in Sources */,
 				B918C9CB2B35015500CA80CA /* AppDelegate.swift in Sources */,
 				B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */,
@@ -310,9 +320,11 @@
 				B90AC76F2B35DCE200880AFF /* Trends.swift in Sources */,
 				B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */,
 				B918CA082B354A3C00CA80CA /* HomePageViewController.swift in Sources */,
+				B90AC7772B37599B00880AFF /* AcceptanceTableViewCell.swift in Sources */,
 				B918CA062B35451500CA80CA /* tabBarViewController.swift in Sources */,
 				B918C9F52B35048000CA80CA /* BarViewController.swift in Sources */,
 				B918C9F92B3504A900CA80CA /* BarViewController3.swift in Sources */,
+				B90AC7752B37598B00880AFF /* EarningsChartTableViewCell.swift in Sources */,
 				B918C9F72B35049800CA80CA /* BarViewController2.swift in Sources */,
 				B918C9EB2B35035400CA80CA /* Response.swift in Sources */,
 				B918C9EF2B35039C00CA80CA /* Model.swift in Sources */,

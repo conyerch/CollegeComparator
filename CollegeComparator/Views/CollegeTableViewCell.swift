@@ -9,8 +9,6 @@ import UIKit
 
 class CollegeTableViewCell: UITableViewCell {
     
-
-    
     @IBOutlet weak var collegeName: UILabel!
     
   

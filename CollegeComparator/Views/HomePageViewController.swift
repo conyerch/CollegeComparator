@@ -10,10 +10,16 @@ import Charts
 
 class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, AxisValueFormatter {
     
+    var school1 = [String]()
+    var earn = [Double]()
+    var school2 = [String]()
+    var accR = [Double]()
+    var school3 = [String]()
+    var CPT = [Double]()
+    
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
         return "example"
     }
-    
     
     var model = Model()
     
@@ -38,6 +44,7 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
     @IBOutlet weak var welcomeText: UITextView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         axisFormatDelegate = self
         model.delegate = self
@@ -66,7 +73,7 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
         self.med_earn = self.med_earn.sorted(by: {$0.earn < $1.earn})
-        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})
+        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})  
         
     }
     
@@ -79,7 +86,21 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
         
         earningsChart.center = view.center
         
-        setChart(dataEntryX: ["example"], dataEntryY: [1.0])
+        for i in 0..<6 {
+            
+            let (s1, e) = med_earn[i]
+            let (s2, a) = accRates[i]
+            let (s3, cp) = earnPerCost[i]
+            school1.append(s1)
+            school2.append(s2)
+            school3.append(s3)
+            earn.append(Double(e))
+            accR.append(Double(a))
+            CPT.append(Double(cp))
+            
+        }
+        
+        setChart(dataEntryX: school1, dataEntryY: earn)
         
         earningsChart.fitScreen()
     }
@@ -92,12 +113,13 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
         
             for i in 0..<forX.count{
                 
-                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: ["example"] as AnyObject?)
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: school1 as AnyObject?)
                 
                 //print(dataEntry)
                 
                 dataEntries.append(dataEntry)
             }
+        
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
         
             let chartData = BarChartData(dataSet: chartDataSet)

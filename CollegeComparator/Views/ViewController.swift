@@ -18,7 +18,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var colleges = [Schools]()
     var filteredColleges = [Schools]()
 
-
     override func viewDidLoad() {
     
         super.viewDidLoad()
