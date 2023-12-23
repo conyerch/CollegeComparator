@@ -8,7 +8,12 @@
 import UIKit
 import Charts
 
-class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate {
+class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, AxisValueFormatter {
+    
+    func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        return "example"
+    }
+    
     
     var model = Model()
     
@@ -26,12 +31,15 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate {
     
     var earnPerCost:[(name:String, earnPer:Double)] = []
     
+    weak var axisFormatDelegate: AxisValueFormatter?
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var welcomeText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        axisFormatDelegate = self
         model.delegate = self
         model.getSchools()
         welcomeLabel.textAlignment = .center
@@ -60,12 +68,46 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate {
         self.med_earn = self.med_earn.sorted(by: {$0.earn < $1.earn})
         self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})
         
-        print(self.accRates)
-        
     }
     
     override func viewDidLayoutSubviews() {
         view.addSubview(earningsChart)
+        
+        super.viewDidLayoutSubviews()
+        
+        earningsChart.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 300)
+        
+        earningsChart.center = view.center
+        
+        setChart(dataEntryX: ["example"], dataEntryY: [1.0])
+        
+        earningsChart.fitScreen()
+    }
+    
+    func setChart(dataEntryX forX:[String],dataEntryY forY: [Double]) {
+        
+            //viewForChart.noDataText = "You need to provide data for the chart."
+            
+        var dataEntries:[BarChartDataEntry] = []
+        
+            for i in 0..<forX.count{
+                
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: ["example"] as AnyObject?)
+                
+                //print(dataEntry)
+                
+                dataEntries.append(dataEntry)
+            }
+            let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        
+            let chartData = BarChartData(dataSet: chartDataSet)
+        
+            earningsChart.data = chartData
+        
+            let xAxisValue = earningsChart.xAxis
+        
+            xAxisValue.valueFormatter = axisFormatDelegate
+        
     }
 
 }
