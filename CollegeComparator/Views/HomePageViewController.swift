@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import Charts
 
-class HomePageViewController: UIViewController, ModelDel {
+class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate {
     
     var model = Model()
+    
+    var earningsChart = BarChartView()
+    
+    var acceptanceRateChart = BarChartView()
+    
+    var earnPerCostChart = BarChartView()
     
     var colleges = [Schools]()
     
@@ -55,6 +62,10 @@ class HomePageViewController: UIViewController, ModelDel {
         
         print(self.accRates)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        view.addSubview(earningsChart)
     }
 
 }

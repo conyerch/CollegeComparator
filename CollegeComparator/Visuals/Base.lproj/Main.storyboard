@@ -306,14 +306,17 @@
                                 <rect key="frame" x="5" y="113" width="383" height="646"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College Comparator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJy-4z-661">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="152"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Welcome to College Comparator" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fsY-Lc-o3v">
-                                        <rect key="frame" x="0.0" y="24" width="383" height="622"/>
+                                        <rect key="frame" x="0.0" y="152" width="383" height="494"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="494" id="Nf2-aQ-9NV"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
