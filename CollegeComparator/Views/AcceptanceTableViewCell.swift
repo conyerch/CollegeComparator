@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Charts
 
 class AcceptanceTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var AcceptanceChart: BarChartView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

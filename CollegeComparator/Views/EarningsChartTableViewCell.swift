@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Charts
 
 class EarningsChartTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var EarningsChart: BarChartView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

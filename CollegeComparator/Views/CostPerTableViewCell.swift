@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Charts
 
 class CostPerTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var CostPerChart: BarChartView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
