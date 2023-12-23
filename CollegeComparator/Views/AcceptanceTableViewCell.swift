@@ -23,5 +23,9 @@ class AcceptanceTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(schools:[String], acceptance:[Double]) {
+        
+    }
 
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, AxisValueFormatter {
+class HomePageViewController: UIViewController, ModelDel {
     
     var school1 = [String]()
     var earn = [Double]()
@@ -16,18 +16,8 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
     var accR = [Double]()
     var school3 = [String]()
     var CPT = [Double]()
-    
-    func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
-        return "example"
-    }
-    
+
     var model = Model()
-    
-    var earningsChart = BarChartView()
-    
-    var acceptanceRateChart = BarChartView()
-    
-    var earnPerCostChart = BarChartView()
     
     var colleges = [Schools]()
     
@@ -37,8 +27,6 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
     
     var earnPerCost:[(name:String, earnPer:Double)] = []
     
-    weak var axisFormatDelegate: AxisValueFormatter?
-    
     @IBOutlet weak var welcomeLabel: UILabel!
     
     @IBOutlet weak var welcomeText: UITextView!
@@ -46,7 +34,6 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        axisFormatDelegate = self
         model.delegate = self
         model.getSchools()
         welcomeLabel.textAlignment = .center
@@ -56,11 +43,55 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
+        
+        // pass correct data into each chart throgh configure
+        
+        if indexPath.row == 0 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
+            cell.configure(schools:school1, earnings: earn)
+            
+            }
+        
+        if indexPath.row == 1 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Acceptance_rate") as! AcceptanceTableViewCell
+            cell.configure(schools: school2, acceptance: accR)
+            
+            }
+        
+        if indexPath.row == 2 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
+            cell.configure(schools: school3, costPer: CPT)
+            
+            }
+        
+            //... some other types of cells
+
+        return cell
+    }
+    
     func getSchools(_ schools: [Schools]) {
+        
         self.colleges = schools
-        setData()
 
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
     
     func setData() {
         
@@ -130,6 +161,6 @@ class HomePageViewController: UIViewController, ModelDel, ChartViewDelegate, Axi
         
             xAxisValue.valueFormatter = axisFormatDelegate
         
-    }
+    }*/
 
 }

@@ -19,12 +19,9 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         return prog
     }
     
-    
     var school: Schools?
     
     var earnings:[Earnings] = []
-    
-    //var barChart = BarChartView()
     
     var barChart = BarChartView()
     
