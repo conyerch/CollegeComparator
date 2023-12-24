@@ -11,11 +11,9 @@ class CollegeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var collegeName: UILabel!
     
-  
     @IBOutlet weak var studentSize: UILabel!
     
     var school:Schools?
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +40,6 @@ class CollegeTableViewCell: UITableViewCell {
         let mys = "Student Body Size: " + String(describing: school!.studentSize!)
         
         self.studentSize.text = mys
-
         
     }
 

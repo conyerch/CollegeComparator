@@ -39,8 +39,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
-        
-        tableView.reloadData()
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +57,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
             cell.configure(schools:school1, earnings: earn)
+            cell.contentView.addSubview(cell.Earnings_10yr)
+            return cell
             
             }
         
@@ -65,6 +66,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Acceptance_rate") as! AcceptanceTableViewCell
             cell.configure(schools: school2, acceptance: accR)
+            cell.contentView.addSubview(cell.AcceptanceChart)
+            return cell
             
             }
         
@@ -72,12 +75,12 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
             cell.configure(schools: school3, costPer: CPT)
+            cell.contentView.addSubview(cell.CostPerChart)
+            return cell
             
             }
         
             //... some other types of cells
-        
-        tableView.reloadRows(at: [indexPath], with: .none)
         return cell
         
     }

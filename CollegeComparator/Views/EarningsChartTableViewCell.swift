@@ -56,15 +56,13 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.data = chartData
         
-        print(Earnings_10yr.data!.entryCount)
-        
         let xAxisValue = Earnings_10yr.xAxis
         
         xAxisValue.valueFormatter = axisFormatDelegate
         
         Earnings_10yr.notifyDataSetChanged()
         
-        print(Earnings_10yr.data!.entryCount)
+        self.setSelected(false, animated: false)
         
     }
 
