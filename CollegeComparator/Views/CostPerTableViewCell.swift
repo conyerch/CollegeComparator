@@ -96,7 +96,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         CostPerChart.legend.horizontalAlignment = .center
         
-        CostPerChart.legend.verticalAlignment = .bottom 
+        CostPerChart.legend.verticalAlignment = .top
         
         CostPerChart.legend.wordWrapEnabled = true
         

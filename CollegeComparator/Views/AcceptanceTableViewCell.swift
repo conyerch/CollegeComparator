@@ -15,7 +15,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
         let prog = programs[Int(value)]
-        print(prog)
+        //print(prog)
         return prog
     }
     
@@ -58,7 +58,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Lowest Acceptance Rates")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Lowest Acceptance Rate")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         
@@ -96,7 +96,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         
         AcceptanceChart.legend.horizontalAlignment = .center
         
-        AcceptanceChart.legend.verticalAlignment = .bottom
+        AcceptanceChart.legend.verticalAlignment = .top
         
         self.setSelected(false, animated: false)
         

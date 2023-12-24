@@ -100,7 +100,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.legend.horizontalAlignment = .center
         
-        Earnings_10yr.legend.verticalAlignment = .bottom
+        Earnings_10yr.legend.verticalAlignment = .top
         
         self.setSelected(false, animated: false)
         

@@ -12,14 +12,18 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     @IBOutlet weak var titleLabel: UILabel!
     
     var school1 = [String]()
+    
     var earn = [Double]()
+    
     var school2 = [String]()
+    
     var accR = [Double]()
+    
     var school3 = [String]()
+    
     var CPT = [Double]()
 
     var model = Model()
@@ -54,7 +58,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,6 +69,22 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if indexPath.row == 0 {
             
+            let cell = tableView.dequeueReusableCell(withIdentifier: "textBox") as! TextBoxTableViewCell
+            cell.contentView.addSubview(cell.textBox)
+            return cell
+            
+            }
+        
+        if indexPath.row == 1 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Leaders") as! LabelTableViewCell
+            cell.contentView.addSubview(cell.leaders)
+            return cell
+            
+            }
+        
+        if indexPath.row == 2 {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
             cell.configure(schools:school1, earnings: earn)
             cell.contentView.addSubview(cell.EarningsText)
@@ -73,7 +93,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             }
         
-        if indexPath.row == 1 {
+        if indexPath.row == 3 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Acceptance_rate") as! AcceptanceTableViewCell
             cell.configure(schools: school2, acceptance: accR)
@@ -82,7 +102,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             }
         
-        if indexPath.row == 2 {
+        if indexPath.row == 4 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
             cell.configure(schools: school3, cp: CPT)
@@ -104,7 +124,20 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        300.0
+        
+        if indexPath.row == 0 {
+            return 120
+        }
+        
+        if indexPath.row == 1 {
+            return 50
+        }
+        
+        if indexPath.row == 2 {
+            return 300
+        }
+            
+        return 280
     }
     
     override func viewDidLayoutSubviews() {
