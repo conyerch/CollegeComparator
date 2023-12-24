@@ -14,7 +14,9 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     var earn = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
-        return String(describing: value)
+        let prog = programs[Int(value)]
+        //print(prog)
+        return prog
     }
     
     @IBOutlet weak var Earnings_10yr: BarChartView!
@@ -36,6 +38,9 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     }
     
     func configure(schools:[String], earnings:[Double]) {
+        
+        programs = schools
+        earn = earnings
         
         guard schools.count == 6 else {
             return
@@ -65,6 +70,30 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         xAxisValue.valueFormatter = axisFormatDelegate
         
         Earnings_10yr.notifyDataSetChanged()
+        
+        Earnings_10yr.frame = CGRect(x: 0, y: 0, width: 380, height: 200)
+        
+        Earnings_10yr.xAxis.labelPosition = XAxis.LabelPosition.bottom
+        
+        Earnings_10yr.xAxis.wordWrapEnabled = true
+        
+        Earnings_10yr.xAxis.labelWidth = 22
+        
+        Earnings_10yr.extraBottomOffset = CGFloat(60.0)
+        
+        Earnings_10yr.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        
+        Earnings_10yr.leftAxis.enabled = false
+        
+        Earnings_10yr.legend.enabled = false
+        
+        Earnings_10yr.drawGridBackgroundEnabled = false
+        
+        Earnings_10yr.xAxis.drawGridLinesEnabled = false
+        
+        Earnings_10yr.leftAxis.drawGridLinesEnabled = false
+        
+        Earnings_10yr.rightAxis.drawGridLinesEnabled = false
         
         self.setSelected(false, animated: false)
         

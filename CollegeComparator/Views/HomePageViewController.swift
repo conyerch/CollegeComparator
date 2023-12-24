@@ -77,7 +77,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 2 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
-            cell.configure(schools: school3, costPer: CPT)
+            cell.configure(schools: school3, cp: CPT)
             cell.contentView.addSubview(cell.CostPerChart)
             return cell
             
@@ -111,12 +111,12 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
             self.accRates.append((colleges[i].schoolName, colleges[i].acc_rate!))
             self.med_earn.append((colleges[i].schoolName, colleges[i].med_10yr!))
-            self.earnPerCost.append((colleges[i].schoolName, Double(colleges[i].med_10yr! / colleges[i].cost!)))
+            self.earnPerCost.append((colleges[i].schoolName, Double(Double(colleges[i].med_10yr!) / Double(colleges[i].cost!))))
         }
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
         self.med_earn = self.med_earn.sorted(by: {$0.earn < $1.earn})
-        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})
+        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer > $1.earnPer})
         
         //print(accRates)
         
