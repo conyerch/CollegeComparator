@@ -303,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Jv-QO-wjG" userLabel="HomePage">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="656"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Earnings_10yr" id="iQf-B6-yMA" customClass="EarningsChartTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
@@ -321,7 +321,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="Earnings_Chart" destination="Xbk-BA-AgP" id="VmU-Oe-RPl"/>
+                                            <outlet property="Earnings_10yr" destination="Xbk-BA-AgP" id="UAC-vf-XIM"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Acceptance_rate" id="tdt-EA-w1B" customClass="AcceptanceTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
@@ -366,13 +366,16 @@
                         <viewLayoutGuide key="safeArea" id="P0g-QT-TSh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="P0g-QT-TSh" firstAttribute="bottom" secondItem="7Jv-QO-wjG" secondAttribute="bottom" id="EOJ-8L-9nV"/>
+                            <constraint firstItem="P0g-QT-TSh" firstAttribute="bottom" secondItem="7Jv-QO-wjG" secondAttribute="bottom" constant="10" id="EOJ-8L-9nV"/>
                             <constraint firstItem="7Jv-QO-wjG" firstAttribute="leading" secondItem="P0g-QT-TSh" secondAttribute="leading" id="d33-ZG-pvM"/>
                             <constraint firstItem="7Jv-QO-wjG" firstAttribute="top" secondItem="P0g-QT-TSh" secondAttribute="top" id="ikR-jG-vOW"/>
                             <constraint firstItem="P0g-QT-TSh" firstAttribute="trailing" secondItem="7Jv-QO-wjG" secondAttribute="trailing" id="lF9-MR-Wl1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gdn-ia-hEb"/>
+                    <connections>
+                        <outlet property="tableView" destination="7Jv-QO-wjG" id="Sim-aL-yUK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oil-Kw-ezd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -101,6 +101,7 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
                 
                 dataEntries.append(dataEntry)
             }
+        
             let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
         
             let chartData = BarChartData(dataSet: chartDataSet)

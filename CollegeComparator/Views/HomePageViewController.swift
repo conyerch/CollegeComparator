@@ -8,7 +8,9 @@
 import UIKit
 import Charts
 
-class HomePageViewController: UIViewController, ModelDel {
+class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ModelDel {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var school1 = [String]()
     var earn = [Double]()
@@ -27,20 +29,23 @@ class HomePageViewController: UIViewController, ModelDel {
     
     var earnPerCost:[(name:String, earnPer:Double)] = []
     
-    @IBOutlet weak var welcomeLabel: UILabel!
-    
-    @IBOutlet weak var welcomeText: UITextView!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         model.delegate = self
         model.getSchools()
-        welcomeLabel.textAlignment = .center
         
-        welcomeText.text = "Compare the top US colleges by earnings, awards, Pell recipients, tuition, faculty, and divsersity, or search for individual school data"
-
+        tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
+        
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,24 +76,27 @@ class HomePageViewController: UIViewController, ModelDel {
             }
         
             //... some other types of cells
-
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
         return cell
+        
     }
     
     func getSchools(_ schools: [Schools]) {
         
         self.colleges = schools
+        tableView.reloadData()
 
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        200.0
+    }
     
-    
-    
-    
-    
-    
-    
-    
+    override func viewDidLayoutSubviews() {
+        
+        super.viewDidLayoutSubviews()
+    }
     
     
     /*
