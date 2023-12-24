@@ -34,10 +34,13 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         model.delegate = self
+        
         model.getSchools()
         
         tableView.dataSource = self
+        
         tableView.delegate = self
+        
         // Do any additional setup after loading the view.
 
     }
@@ -88,7 +91,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     func getSchools(_ schools: [Schools]) {
         
         self.colleges = schools
-        tableView.reloadData()
+        self.setData()
 
     }
     
@@ -99,10 +102,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLayoutSubviews() {
         
         super.viewDidLayoutSubviews()
+        
     }
-    
-    
-    /*
     
     func setData() {
         
@@ -115,63 +116,27 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
         self.med_earn = self.med_earn.sorted(by: {$0.earn < $1.earn})
-        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})  
+        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer < $1.earnPer})
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        view.addSubview(earningsChart)
-        
-        super.viewDidLayoutSubviews()
-        
-        earningsChart.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 300)
-        
-        earningsChart.center = view.center
+        //print(accRates)
         
         for i in 0..<6 {
             
-            let (s1, e) = med_earn[i]
-            let (s2, a) = accRates[i]
-            let (s3, cp) = earnPerCost[i]
-            school1.append(s1)
-            school2.append(s2)
-            school3.append(s3)
-            earn.append(Double(e))
-            accR.append(Double(a))
-            CPT.append(Double(cp))
+            let (s1, e) = self.med_earn[i]
+            let (s2, a) = self.accRates[i]
+            let (s3, cp) = self.earnPerCost[i]
+            self.school1.append(s1)
+            self.school2.append(s2)
+            self.school3.append(s3)
+            self.earn.append(Double(e))
+            self.accR.append(Double(a))
+            self.CPT.append(Double(cp))
             
         }
         
-        setChart(dataEntryX: school1, dataEntryY: earn)
+        tableView.reloadData()
+
         
-        earningsChart.fitScreen()
     }
     
-    func setChart(dataEntryX forX:[String],dataEntryY forY: [Double]) {
-        
-            //viewForChart.noDataText = "You need to provide data for the chart."
-            
-        var dataEntries:[BarChartDataEntry] = []
-        
-            for i in 0..<forX.count{
-                
-                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: school1 as AnyObject?)
-                
-                //print(dataEntry)
-                
-                dataEntries.append(dataEntry)
-            }
-        
-            let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
-        
-            let chartData = BarChartData(dataSet: chartDataSet)
-        
-            earningsChart.data = chartData
-        
-            let xAxisValue = earningsChart.xAxis
-        
-            xAxisValue.valueFormatter = axisFormatDelegate
-        
-    }*/
-
 }

@@ -37,13 +37,17 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     
     func configure(schools:[String], earnings:[Double]) {
         
+        guard schools.count == 6 else {
+            return
+        }
+        
         var dataEntries:[BarChartDataEntry] = []
         
         Earnings_10yr.noDataText = "No data"
         
         for i in 0..<6{
                 
-            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(i))
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(earnings[i]))
                 
                 //print(dataEntry)
                 
