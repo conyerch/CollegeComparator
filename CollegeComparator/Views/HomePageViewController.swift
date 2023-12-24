@@ -12,6 +12,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var school1 = [String]()
     var earn = [Double]()
     var school2 = [String]()
@@ -41,6 +44,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.delegate = self
         
+        titleLabel.text = "College Comparator"
+        
+        titleLabel.textAlignment = .center
+        
         // Do any additional setup after loading the view.
 
     }
@@ -60,6 +67,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
             cell.configure(schools:school1, earnings: earn)
+            cell.contentView.addSubview(cell.EarningsText)
             cell.contentView.addSubview(cell.Earnings_10yr)
             return cell
             
@@ -96,7 +104,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200.0
+        300.0
     }
     
     override func viewDidLayoutSubviews() {
@@ -135,7 +143,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         tableView.reloadData()
-
         
     }
     

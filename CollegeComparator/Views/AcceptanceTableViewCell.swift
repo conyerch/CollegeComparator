@@ -10,14 +10,14 @@ import Charts
 
 class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatter {
     
-    func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
-        let prog = programs[Int(value)]
-        //print(prog)
-        return prog
-    }
-    
     var programs = [String]()
     var acceptances = [Double]()
+    
+    func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        let prog = programs[Int(value)]
+        print(prog)
+        return prog
+    }
     
     @IBOutlet weak var AcceptanceChart: BarChartView!
     
@@ -26,6 +26,8 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        AcceptanceChart.delegate = self
+        axisFormatDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,7 +58,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Lowest Acceptance Rates")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         
@@ -68,7 +70,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         
         AcceptanceChart.notifyDataSetChanged()
         
-        AcceptanceChart.frame = CGRect(x: 0, y: 0, width: 380, height: 200)
+        AcceptanceChart.frame = CGRect(x: 0, y: 0, width: 380, height: 300)
         
         AcceptanceChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -82,7 +84,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         
         AcceptanceChart.leftAxis.enabled = false
         
-        AcceptanceChart.legend.enabled = false
+        AcceptanceChart.legend.enabled = true
         
         AcceptanceChart.drawGridBackgroundEnabled = false
         
@@ -91,6 +93,10 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         AcceptanceChart.leftAxis.drawGridLinesEnabled = false
         
         AcceptanceChart.rightAxis.drawGridLinesEnabled = false
+        
+        AcceptanceChart.legend.horizontalAlignment = .center
+        
+        AcceptanceChart.legend.verticalAlignment = .bottom
         
         self.setSelected(false, animated: false)
         

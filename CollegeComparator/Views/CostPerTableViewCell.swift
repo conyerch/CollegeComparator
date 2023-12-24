@@ -58,7 +58,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Highest Median Yearly Earnings Per Tuition Cost")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         
@@ -70,7 +70,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         CostPerChart.notifyDataSetChanged()
         
-        CostPerChart.frame = CGRect(x: 0, y: 0, width: 380, height: 200)
+        CostPerChart.frame = CGRect(x: 0, y: 0, width: 380, height: 300)
         
         CostPerChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -84,7 +84,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         CostPerChart.leftAxis.enabled = false
         
-        CostPerChart.legend.enabled = false
+        CostPerChart.legend.enabled = true
         
         CostPerChart.drawGridBackgroundEnabled = false
         
@@ -93,6 +93,12 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         CostPerChart.leftAxis.drawGridLinesEnabled = false
         
         CostPerChart.rightAxis.drawGridLinesEnabled = false
+        
+        CostPerChart.legend.horizontalAlignment = .center
+        
+        CostPerChart.legend.verticalAlignment = .bottom 
+        
+        CostPerChart.legend.wordWrapEnabled = true
         
         self.setSelected(false, animated: false)
         

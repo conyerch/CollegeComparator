@@ -21,6 +21,8 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     
     @IBOutlet weak var Earnings_10yr: BarChartView!
     
+    @IBOutlet weak var EarningsText: UITextView!
+    
     weak var axisFormatDelegate: AxisValueFormatter?
     
     override func awakeFromNib() {
@@ -28,6 +30,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         // Initialization code
         Earnings_10yr.delegate = self
         axisFormatDelegate = self
+        EarningsText.text = "Highest Median Earnings 10 Years After Graduation"
         
     }
 
@@ -59,7 +62,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Highest Median 10 Year Earnings")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         
@@ -71,7 +74,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.notifyDataSetChanged()
         
-        Earnings_10yr.frame = CGRect(x: 0, y: 0, width: 380, height: 200)
+        Earnings_10yr.frame = CGRect(x: 0, y: 0, width: 380, height: 300)
         
         Earnings_10yr.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -85,7 +88,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.leftAxis.enabled = false
         
-        Earnings_10yr.legend.enabled = false
+        Earnings_10yr.legend.enabled = true
         
         Earnings_10yr.drawGridBackgroundEnabled = false
         
@@ -94,6 +97,10 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         Earnings_10yr.leftAxis.drawGridLinesEnabled = false
         
         Earnings_10yr.rightAxis.drawGridLinesEnabled = false
+        
+        Earnings_10yr.legend.horizontalAlignment = .center
+        
+        Earnings_10yr.legend.verticalAlignment = .bottom
         
         self.setSelected(false, animated: false)
         
