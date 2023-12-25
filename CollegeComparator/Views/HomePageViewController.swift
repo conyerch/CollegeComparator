@@ -58,7 +58,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,6 +111,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             }
         
+        if indexPath.row == 5 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "trends") as! TrendsTableViewCell
+            cell.contentView.addSubview(cell.trendsLabel)
+            return cell
+            
+            }
+        
             //... some other types of cells
         return cell
         
@@ -129,7 +137,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return 120
         }
         
-        if indexPath.row == 1 {
+        if (indexPath.row == 1 || indexPath.row == 5) {
             return 50
         }
         

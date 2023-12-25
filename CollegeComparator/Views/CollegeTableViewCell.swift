@@ -13,6 +13,8 @@ class CollegeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var studentSize: UILabel!
     
+    @IBOutlet weak var medSAT: UILabel!
+    
     var school:Schools?
     
     override func awakeFromNib() {
@@ -20,6 +22,7 @@ class CollegeTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -37,9 +40,31 @@ class CollegeTableViewCell: UITableViewCell {
         
         self.collegeName.text = school?.schoolName
         
+        self.collegeName.textAlignment = .center
+        
+        
+        
+        if school!.sat! == -1 {
+            
+            self.medSAT.text = "Median SAT Score: Unavailable"
+            
+        }
+        
+        else {
+            
+            self.medSAT.text = "Median SAT Score: " + String(describing: school!.sat!)
+            
+        }
+
         let mys = "Student Body Size: " + String(describing: school!.studentSize!)
         
         self.studentSize.text = mys
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 150
         
     }
 
