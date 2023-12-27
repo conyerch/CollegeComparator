@@ -476,8 +476,27 @@
                                             <outlet property="EngineeringChart" destination="ulE-de-mHm" id="IaJ-iU-kFT"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scores" id="J0S-kN-OXo" customClass="TrendsTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="computerScience" id="jgx-Th-cZB" customClass="CompSciTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="399.66667556762695" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jgx-Th-cZB" id="H3k-4z-n2I">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cN-IO-IsJ" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="76" y="-42.666675567626953" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CompSciChart" destination="1cN-IO-IsJ" id="cCg-h9-MRJ"/>
+                                            <outlet property="compSciChart" destination="1cN-IO-IsJ" id="4FM-IQ-4RF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scores" id="J0S-kN-OXo" customClass="TrendsTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="443.33334350585938" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J0S-kN-OXo" id="Gk5-sp-Jwy">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -498,7 +517,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MathScores" id="ybU-mX-XOV" customClass="SatMathTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="443.33334350585938" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="487.0000114440918" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ybU-mX-XOV" id="vsa-ml-o58">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -513,6 +532,24 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ScoreChart" destination="Qej-pr-hvp" id="3ui-qv-kRD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReadScores" id="7Rh-eS-ex4" customClass="SatReadTableViewCell" customModule="CollegeComparator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="530.66667938232422" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Rh-eS-ex4" id="OZ7-5d-X08">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-9x-uMc" customClass="BarChartView" customModule="Charts">
+                                                    <rect key="frame" x="76" y="-42.666679382324219" width="240" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="readChart" destination="v4H-9x-uMc" id="ENG-lR-MeE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

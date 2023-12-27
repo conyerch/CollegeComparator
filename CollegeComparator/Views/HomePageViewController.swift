@@ -33,6 +33,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var school5 = [String]()
     
     var mathScores = [Double]()
+    
+    var school6 = [String]()
+    
+    var compSci = [Double]()
+    
+    var school7 = [String]()
+    
+    var readScores = [Double]()
 
     var model = Model()
     
@@ -47,6 +55,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var engineeringMajor:[(name:String, perc:Double)] = []
     
     var satMath:[(name:String, sat:Double)] = []
+    
+    var compSciMajor:[(name:String, perc:Double)] = []
+    
+    var satRead:[(name:String, sat:Double)] = []
     
     override func viewDidLoad() {
         
@@ -70,7 +82,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 9
+        return 11
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,13 +157,22 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if indexPath.row == 7 {
             
+            let cell = tableView.dequeueReusableCell(withIdentifier: "computerScience") as! CompSciTableViewCell
+            cell.configure(schools: school6, engineeringPercent: compSci)
+            cell.contentView.addSubview(cell.CompSciChart)
+            return cell
+            
+            }
+        
+        if indexPath.row == 8 {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "scores") as! TrendsTableViewCell
             cell.contentView.addSubview(cell.trendsLabel)
             return cell
             
             }
         
-        if indexPath.row == 8 {
+        if indexPath.row == 9 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MathScores") as! SatMathTableViewCell
             cell.configure(schools: school5, mathScores: mathScores)
@@ -159,6 +180,16 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
             
             }
+        
+        if indexPath.row == 10 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReadScores") as! SatReadTableViewCell
+            cell.configure(schools: school7, mathScores: readScores)
+            cell.contentView.addSubview(cell.readChart)
+            return cell
+            
+            }
+        
         
             //... some other types of cells
         return cell
@@ -178,7 +209,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return 120
         }
         
-        if (indexPath.row == 1 || indexPath.row == 5 || indexPath.row == 7) {
+        if (indexPath.row == 1 || indexPath.row == 5 || indexPath.row == 8) {
             return 50
         }
         
@@ -204,6 +235,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             self.earnPerCost.append((colleges[i].schoolName, Double(Double(colleges[i].med_10yr!) / Double(colleges[i].cost!))))
             self.satMath.append((colleges[i].schoolName, Double(colleges[i].sat_75_math!)))
             self.engineeringMajor.append((colleges[i].schoolName, colleges[i].perc_engin!))
+            self.compSciMajor.append((colleges[i].schoolName, colleges[i].perc_comp!))
+            self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_75_read!)))
             
         }
         
@@ -211,7 +244,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.med_earn = self.med_earn.sorted(by: {$0.earn > $1.earn})
         self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer > $1.earnPer})
         self.satMath = self.satMath.sorted(by: {$0.sat > $1.sat})
-        self.engineeringMajor = self.engineeringMajor.sorted(by: {$0.perc > $1.perc})
+        self.engineeringMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
+        self.satRead = self.satRead.sorted(by: {$0.sat > $1.sat})
+        self.compSciMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
         
         //print(accRates)
         
@@ -222,16 +257,22 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             let (s3, cp) = self.earnPerCost[i]
             let (s4, ep) = self.engineeringMajor[i]
             let (s5, ms) = self.satMath[i]
+            let (s6, csp) = self.compSciMajor[i]
+            let (s7, rs) = self.satRead[i]
             self.school1.append(s1)
             self.school2.append(s2)
             self.school3.append(s3)
             self.school4.append(s4)
             self.school5.append(s5)
+            self.school6.append(s6)
+            self.school7.append(s7)
             self.earn.append(Double(e))
             self.accR.append(Double(a))
             self.CPT.append(Double(cp))
             self.eng_perc.append(Double(ep))
             self.mathScores.append(Double(ms))
+            self.compSci.append(Double(csp))
+            self.readScores.append(Double(rs))
             
         }
     
