@@ -71,7 +71,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         destinationVC.school = selectedSchool;
         
-        destinationVC.title = "Homepage"
+        destinationVC.title = "Main Page"
         
         let navVC = tabCtrl.viewControllers![1]
         
@@ -79,11 +79,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let navVC3 = tabCtrl.viewControllers![3]
         
-        navVC.title = "Major Earnings"
+        navVC.title = "Earnings by Major"
         
-        navVC2.title = "Major Breakdown"
+        navVC2.title = "Top Degrees"
         
-        navVC3.title = "SAT Percentiles"
+        navVC3.title = "SAT Percentile"
         
         // Assuming home view controller is in the first tab, else update the array index
         

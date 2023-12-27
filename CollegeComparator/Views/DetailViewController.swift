@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var visitLabel: UILabel!
     
+    @IBOutlet weak var endText: UITextView!
     var school: Schools?
     
     override func viewDidLoad() {
@@ -48,11 +49,19 @@ class DetailViewController: UIViewController {
         
         satLabel.text = "Descriptive Statistics"
         
+        satLabel.textAlignment = .left
+        
         visitLabel.text = "Visit " + school!.schoolName + "'s Homepage" + "\n"
         
-        visitLabel.textAlignment = .center
+        visitLabel.textAlignment = .left
+        
+        endText.text = "Explore more statistics from " + school!.schoolName + "'s most recent data releases using the tabs below, including information on graduate earnings, most common majors, and standardized scores"
         
         textView.text = "Average Faculty Compensation: " + String(describing: school!.facSalary!) + "\n" + "Average Student SAT Score: " + String(describing: school!.sat!) + "\n" + "Latest Tution Cost: " + String(describing: school!.cost!) + "\n" + "Average Expenditure Per Student: " + String(describing: school!.ave_fte!) + "\n"
+        
+        textView.textAlignment = .center
+        
+        endText.textAlignment = .center
         
         // guard that we received a valid url
         guard school?.web != nil else {
@@ -79,6 +88,8 @@ class DetailViewController: UIViewController {
         let myURL = URL(string:schoolString)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
+        
+        webView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 400)
         
     }
 

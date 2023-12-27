@@ -133,36 +133,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-kw-mbP">
-                                <rect key="frame" x="10" y="123" width="378" height="597"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-kw-mbP">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-pO-ohI">
-                                        <rect key="frame" x="0.0" y="0.0" width="378" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-pO-ohI">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuf-uE-E4k">
-                                        <rect key="frame" x="0.0" y="24" width="378" height="21.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuf-uE-E4k">
+                                        <rect key="frame" x="0.0" y="34" width="393" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Example Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zij-aL-ONa">
-                                        <rect key="frame" x="0.0" y="45.666666666666664" width="378" height="117.66666666666669"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" text="Example Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zij-aL-ONa">
+                                        <rect key="frame" x="0.0" y="63.333333333333336" width="393" height="0.0"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnH-2Z-rVC">
-                                        <rect key="frame" x="0.0" y="163.33333333333331" width="378" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnH-2Z-rVC">
+                                        <rect key="frame" x="0.0" y="73.333333333333329" width="393" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wut-rZ-ANk">
-                                        <rect key="frame" x="0.0" y="183.66666666666671" width="378" height="413.33333333333326"/>
+                                    <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wut-rZ-ANk">
+                                        <rect key="frame" x="0.0" y="102.66666666666669" width="393" height="430.00000000000006"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Wut-rZ-ANk" secondAttribute="height" multiplier="1280:1400" id="9LE-Vj-aVX"/>
@@ -172,20 +172,29 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0If-B4-mRk">
+                                        <rect key="frame" x="0.0" y="542.66666666666663" width="393" height="309.33333333333337"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hla-fk-wSl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lkq-kw-mbP" firstAttribute="leading" secondItem="hla-fk-wSl" secondAttribute="leading" constant="10" id="96K-Kg-Ein"/>
-                            <constraint firstItem="lkq-kw-mbP" firstAttribute="top" secondItem="hla-fk-wSl" secondAttribute="top" constant="20" id="Zpl-M8-7Xj"/>
-                            <constraint firstItem="hla-fk-wSl" firstAttribute="bottom" secondItem="lkq-kw-mbP" secondAttribute="bottom" id="e5d-FR-qzv"/>
-                            <constraint firstItem="hla-fk-wSl" firstAttribute="trailing" secondItem="lkq-kw-mbP" secondAttribute="trailing" constant="5" id="sYx-Xl-1ES"/>
+                            <constraint firstItem="hla-fk-wSl" firstAttribute="trailing" secondItem="lkq-kw-mbP" secondAttribute="trailing" id="0Mw-Nd-slK"/>
+                            <constraint firstItem="lkq-kw-mbP" firstAttribute="top" secondItem="kDF-yD-jfN" secondAttribute="top" id="0QW-WK-Zp2"/>
+                            <constraint firstAttribute="bottom" secondItem="lkq-kw-mbP" secondAttribute="bottom" id="32E-1e-h5S"/>
+                            <constraint firstItem="lkq-kw-mbP" firstAttribute="leading" secondItem="hla-fk-wSl" secondAttribute="leading" id="aqw-uA-ozk"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="iAu-tN-wvF"/>
                     <connections>
+                        <outlet property="endText" destination="0If-B4-mRk" id="bHG-eg-ABM"/>
                         <outlet property="satLabel" destination="Nuf-uE-E4k" id="cRZ-RR-G06"/>
                         <outlet property="stackView" destination="lkq-kw-mbP" id="MS3-Px-6az"/>
                         <outlet property="textView" destination="zij-aL-ONa" id="tdj-oh-6Gk"/>
