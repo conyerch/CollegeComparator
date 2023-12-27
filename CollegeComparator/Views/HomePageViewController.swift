@@ -25,6 +25,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var school3 = [String]()
     
     var CPT = [Double]()
+    
+    var school4 = [String]()
+    
+    var eng_perc = [Double]()
+    
+    var school5 = [String]()
+    
+    var mathScores = [Double]()
 
     var model = Model()
     
@@ -35,6 +43,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var med_earn:[(name:String, earn:Int)] = []
     
     var earnPerCost:[(name:String, earnPer:Double)] = []
+    
+    var engineeringMajor:[(name:String, perc:Double)] = []
+    
+    var satMath:[(name:String, sat:Double)] = []
     
     override func viewDidLoad() {
         
@@ -58,7 +70,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 6
+        return 9
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,6 +98,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 2 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
+            cell.Earnings_10yr.noDataText = ""
             cell.configure(schools:school1, earnings: earn)
             cell.contentView.addSubview(cell.EarningsText)
             cell.contentView.addSubview(cell.Earnings_10yr)
@@ -96,6 +109,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 3 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Acceptance_rate") as! AcceptanceTableViewCell
+            cell.AcceptanceChart.noDataText = ""
             cell.configure(schools: school2, acceptance: accR)
             cell.contentView.addSubview(cell.AcceptanceChart)
             return cell
@@ -105,6 +119,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 4 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
+            cell.CostPerChart.noDataText = ""
             cell.configure(schools: school3, cp: CPT)
             cell.contentView.addSubview(cell.CostPerChart)
             return cell
@@ -115,6 +130,32 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "trends") as! TrendsTableViewCell
             cell.contentView.addSubview(cell.trendsLabel)
+            return cell
+            
+            }
+        
+        if indexPath.row == 6 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "engineering") as! EngineeringTableViewCell
+            cell.configure(schools: school4, engineeringPercent: eng_perc)
+            cell.contentView.addSubview(cell.EngineeringChart)
+            return cell
+            
+            }
+        
+        if indexPath.row == 7 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "scores") as! TrendsTableViewCell
+            cell.contentView.addSubview(cell.trendsLabel)
+            return cell
+            
+            }
+        
+        if indexPath.row == 8 {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MathScores") as! SatMathTableViewCell
+            cell.configure(schools: school5, mathScores: mathScores)
+            cell.contentView.addSubview(cell.ScoreChart)
             return cell
             
             }
@@ -137,7 +178,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return 120
         }
         
-        if (indexPath.row == 1 || indexPath.row == 5) {
+        if (indexPath.row == 1 || indexPath.row == 5 || indexPath.row == 7) {
             return 50
         }
         
@@ -161,11 +202,16 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             self.accRates.append((colleges[i].schoolName, colleges[i].acc_rate!))
             self.med_earn.append((colleges[i].schoolName, colleges[i].med_10yr!))
             self.earnPerCost.append((colleges[i].schoolName, Double(Double(colleges[i].med_10yr!) / Double(colleges[i].cost!))))
+            self.satMath.append((colleges[i].schoolName, Double(colleges[i].sat_75_math!)))
+            self.engineeringMajor.append((colleges[i].schoolName, colleges[i].perc_engin!))
+            
         }
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
-        self.med_earn = self.med_earn.sorted(by: {$0.earn < $1.earn})
+        self.med_earn = self.med_earn.sorted(by: {$0.earn > $1.earn})
         self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer > $1.earnPer})
+        self.satMath = self.satMath.sorted(by: {$0.sat > $1.sat})
+        self.engineeringMajor = self.engineeringMajor.sorted(by: {$0.perc > $1.perc})
         
         //print(accRates)
         
@@ -174,15 +220,21 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             let (s1, e) = self.med_earn[i]
             let (s2, a) = self.accRates[i]
             let (s3, cp) = self.earnPerCost[i]
+            let (s4, ep) = self.engineeringMajor[i]
+            let (s5, ms) = self.satMath[i]
             self.school1.append(s1)
             self.school2.append(s2)
             self.school3.append(s3)
+            self.school4.append(s4)
+            self.school5.append(s5)
             self.earn.append(Double(e))
             self.accR.append(Double(a))
             self.CPT.append(Double(cp))
+            self.eng_perc.append(Double(ep))
+            self.mathScores.append(Double(ms))
             
         }
-        
+    
         tableView.reloadData()
         
     }

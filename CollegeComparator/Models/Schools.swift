@@ -36,6 +36,12 @@ struct Schools: Decodable {
     var ave_fte:Int?
     var med_10yr:Int?
     var acc_rate:Double?
+    /*
+    var med_10yr_2017:Int?
+    var med_10yr_2018:Int?
+    var med_10yr_2019:Int?
+    var med_10yr_2020:Int?
+    var med_10yr_2021:Int?*/
     
     // latest.admissions.sat_scores.average.overall,school.faculty_salary,latest.cost.attendance.academic_year"
     
@@ -66,6 +72,12 @@ struct Schools: Decodable {
         case ave_fte = "latest.school.instructional_expenditure_per_fte"
         case med_10yr = "latest.earnings.10_yrs_after_entry.median"
         case acc_rate = "latest.admissions.admission_rate.overall"
+        /*
+        case med_10yr_2017 = "2017.earnings.10_yrs_after_entry.median"
+        case med_10yr_2018 = "2018.earnings.10_yrs_after_entry.median"
+        case med_10yr_2019 = "2019.earnings.10_yrs_after_entry.median"
+        case med_10yr_2020 = "2020.earnings.10_yrs_after_entry.median"
+         case med_10yr_2021 = "2021.earnings.10_yrs_after_entry.median"*/
     }
     
     init (from decoder: Decoder) throws {
@@ -160,7 +172,26 @@ struct Schools: Decodable {
         catch {
             self.med_10yr = 0
         }
+        /*
+        do {
+            
+           
+            self.med_10yr_2017 = try container.decode(Int.self, forKey: .med_10yr_2017)
+            self.med_10yr_2018 = try container.decode(Int.self, forKey: .med_10yr_2018)
+            self.med_10yr_2019 = try container.decode(Int.self, forKey: .med_10yr_2019)
+            self.med_10yr_2020 = try container.decode(Int.self, forKey: .med_10yr_2020)
+            self.med_10yr_2021 = try container.decode(Int.self, forKey: .med_10yr_2021)
         
+        }
+        catch {
+            self.med_10yr_2017 = 0
+            self.med_10yr_2018 = 0
+            self.med_10yr_2019 = 0
+            self.med_10yr_2020 = 0
+            self.med_10yr_2021 = 0
+            
+        }
+        */
         self.perc_engin = try container.decode(Double.self, forKey: .perc_engin)
         
         self.perc_comp = try container.decode(Double.self, forKey: .perc_comp)

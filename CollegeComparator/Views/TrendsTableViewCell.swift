@@ -13,9 +13,9 @@ class TrendsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        trendsLabel.text = "Recent Economic and Social Trends" + "\n" + " Across U.S. Colleges"
         trendsLabel.textAlignment = .center
-        trendsLabel.frame = CGRect(x: 0, y: 0, width: 400, height: 100)
+        trendsLabel.frame = CGRect(x: 75, y: 0, width: 250, height: 100)
+       
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

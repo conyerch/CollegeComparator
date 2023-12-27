@@ -16,8 +16,6 @@ class tabBarViewController: UITabBarController {
         tabBars.items![0].title = "HomePage"
         tabBars.items![1].title = "Search Schools"
         
-
-
         // Do any additional setup after loading the view.
     }
     

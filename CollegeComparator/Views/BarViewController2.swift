@@ -21,7 +21,7 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
     
     var school: Schools?
     
-    var percentages:[(String, Double)] = []
+    var percentages:[(name:String, percent:Double)] = []
     
     var barChart = BarChartView()
     
@@ -76,6 +76,8 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         view.addSubview(barChart)
         
+        self.percentages = self.percentages.sorted(by: {$0.percent > $1.percent})
+        
         for i in 0..<6 {
             let (title, perc) = percentages[i]
             programs.append(title)
@@ -86,6 +88,7 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         setChart(dataEntryX: programs, dataEntryY: percs)
         
         barChart.fitScreen()
+        
     }
     
     func setChart(dataEntryX forX:[String],dataEntryY forY: [Double]) {
