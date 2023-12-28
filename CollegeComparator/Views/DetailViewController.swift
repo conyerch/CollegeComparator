@@ -15,8 +15,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var satLabel: UILabel!
-    
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var textView: UITextView!
@@ -47,13 +45,9 @@ class DetailViewController: UIViewController {
         
         titleLabel.textAlignment = .center
         
-        satLabel.text = "Descriptive Statistics"
-        
-        satLabel.textAlignment = .left
-        
         visitLabel.text = "Visit " + school!.schoolName + "'s Homepage" + "\n"
         
-        visitLabel.textAlignment = .left
+        visitLabel.textAlignment = .center
         
         endText.text = "Explore more statistics from " + school!.schoolName + "'s most recent data releases using the tabs below, including information on graduate earnings, most common majors, and standardized scores"
         
