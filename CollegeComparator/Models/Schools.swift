@@ -72,12 +72,7 @@ struct Schools: Decodable {
         case ave_fte = "latest.school.instructional_expenditure_per_fte"
         case med_10yr = "latest.earnings.10_yrs_after_entry.median"
         case acc_rate = "latest.admissions.admission_rate.overall"
-        /*
-        case med_10yr_2017 = "2017.earnings.10_yrs_after_entry.median"
-        case med_10yr_2018 = "2018.earnings.10_yrs_after_entry.median"
-        case med_10yr_2019 = "2019.earnings.10_yrs_after_entry.median"
-        case med_10yr_2020 = "2020.earnings.10_yrs_after_entry.median"
-         case med_10yr_2021 = "2021.earnings.10_yrs_after_entry.median"*/
+        
     }
     
     init (from decoder: Decoder) throws {
@@ -94,9 +89,17 @@ struct Schools: Decodable {
         
         self.web = try container.decode(String.self, forKey: .web)
         
-        self.facSalary = try container.decode(Int.self, forKey: .facSalary)
-        
-        self.ave_fte = try container.decode(Int.self, forKey: .ave_fte)
+        do {
+            
+            self.facSalary = try container.decode(Int.self, forKey: .facSalary)
+            self.ave_fte = try container.decode(Int.self, forKey: .ave_fte)
+            
+        }
+        catch {
+            self.facSalary = 0
+            self.ave_fte = 0
+            
+        }
         
         // try to get SAT/cost fields, throw error if unretrievable
         do {
@@ -120,7 +123,7 @@ struct Schools: Decodable {
             }
         
         // get earnings from Earnings object
-        self.earnings = try container.decode([Earnings]?.self, forKey: .earnings)
+        //self.earnings = try container.decode([Earnings]?.self, forKey: .earnings)
         
         do {
             
@@ -161,7 +164,7 @@ struct Schools: Decodable {
         
         }
         catch {
-            self.acc_rate = 100.0
+            self.acc_rate = 1.0
         }
         
         do {
@@ -172,26 +175,7 @@ struct Schools: Decodable {
         catch {
             self.med_10yr = 0
         }
-        /*
-        do {
-            
-           
-            self.med_10yr_2017 = try container.decode(Int.self, forKey: .med_10yr_2017)
-            self.med_10yr_2018 = try container.decode(Int.self, forKey: .med_10yr_2018)
-            self.med_10yr_2019 = try container.decode(Int.self, forKey: .med_10yr_2019)
-            self.med_10yr_2020 = try container.decode(Int.self, forKey: .med_10yr_2020)
-            self.med_10yr_2021 = try container.decode(Int.self, forKey: .med_10yr_2021)
-        
-        }
-        catch {
-            self.med_10yr_2017 = 0
-            self.med_10yr_2018 = 0
-            self.med_10yr_2019 = 0
-            self.med_10yr_2020 = 0
-            self.med_10yr_2021 = 0
-            
-        }
-        */
+       
         self.perc_engin = try container.decode(Double.self, forKey: .perc_engin)
         
         self.perc_comp = try container.decode(Double.self, forKey: .perc_comp)
