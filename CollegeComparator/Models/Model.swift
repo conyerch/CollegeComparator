@@ -52,8 +52,6 @@ class Model {
                 
                 if response.results != nil && self.ready {
                     
-                    //print("not nil")
-                    
                     DispatchQueue.main.async {
                         self.delegate?.getSchools(response.results!)
                     }
