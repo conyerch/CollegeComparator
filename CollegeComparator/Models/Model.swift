@@ -29,13 +29,13 @@ class Model {
         
         let session = URLSession.shared
         
+        let session2 = URLSession.shared
+        
         let url2 = URL(string: Constants.API_URL_2)
         
         guard url2 != nil else {
             return
         }
-        
-        let session2 = URLSession.shared
         
         let dataTask = session.dataTask(with: url!) { (data, response, error) in
             if error != nil || data == nil {
@@ -73,7 +73,7 @@ class Model {
 
         }
         
-        let dataTask2 = session.dataTask(with: url2!) { (data, response, error) in
+        let dataTask2 = session2.dataTask(with: url2!) { (data, response, error) in
             if error != nil || data == nil {
                 return
             }

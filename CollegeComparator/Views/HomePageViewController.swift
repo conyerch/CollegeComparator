@@ -72,7 +72,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.delegate = self
         
-        titleLabel.text = "College Comparator"
+        titleLabel.text = "College Comps"
         
         titleLabel.textAlignment = .center
         

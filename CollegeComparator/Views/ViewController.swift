@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let navVC3 = tabCtrl.viewControllers![3]
         
-        navVC.title = "Earnings by Major"
+        navVC.title = "Earnings Trajectory"
         
         navVC2.title = "Top Degrees"
         

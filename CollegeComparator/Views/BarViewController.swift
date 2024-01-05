@@ -21,8 +21,6 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
     
     var school: Schools?
     
-    var earnings:[Earnings] = []
-    
     var barChart = BarChartView()
     
     weak var axisFormatDelegate: AxisValueFormatter?
@@ -42,11 +40,9 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
             return
         }
         
-        earnings = school!.earnings!
-        
         super.viewDidLayoutSubviews()
         
-        barChart.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 300)
+        barChart.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
         
         barChart.center = view.center
         
@@ -74,14 +70,25 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         view.addSubview(barChart)
         
-        earnings = earnings.sorted { $0.med_earnings! > $1.med_earnings! }
         
-        for i in 0..<6 {
-            programs.append(earnings[i].title!)
-            earn.append(Double(earnings[i].med_earnings!))
+        programs.append("25th Percentile 6 Years")
+        earn.append(Double(school!.quar_6yr!))
+        
+        programs.append("Median 6 Years")
+        earn.append(Double(school!.med_6yr!))
+        
+        programs.append("75th Percentile 6 Years")
+        earn.append(Double(school!.thir_6yr!))
+        
+        programs.append("25th Percentile 10 Years")
+        earn.append(Double(school!.quar_10yr!))
+        
+        programs.append("Median 10 Years")
+        earn.append(Double(school!.med_10yr!))
+        
+        programs.append("75th Percentile 10 Years")
+        earn.append(Double(school!.thir_10yr!))
             
-        }
-        
         setChart(dataEntryX: programs, dataEntryY: earn)
         
         barChart.fitScreen()
