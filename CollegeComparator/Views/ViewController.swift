@@ -36,13 +36,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
-        
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
+        
     }
     
     override func viewDidLayoutSubviews() {
         
+        searchController.isActive = true
         super.viewDidLayoutSubviews()
     }
     

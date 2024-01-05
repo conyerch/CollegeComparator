@@ -114,7 +114,7 @@ class DetailViewController: UIViewController {
             
             else {
             
-                self.schoolString = "https://www.ed.gov/"
+                self.schoolString = "https://nces.ed.gov/collegenavigator/"
             
         }
         
