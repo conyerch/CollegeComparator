@@ -119,7 +119,6 @@ struct Schools: Decodable {
         }
         catch {
             self.sat = -1
-            
         }
         
         do {
@@ -220,12 +219,19 @@ struct Schools: Decodable {
         self.perc_health = try container.decode(Double.self, forKey: .perc_health)
         
         self.percentages.append(("Engineering", perc_engin!))
+        
         self.percentages.append(("Computer Science", perc_comp!))
+        
         self.percentages.append(("Mathematics", perc_math!))
+        
         self.percentages.append(("Humanities", perc_humanities!))
+        
         self.percentages.append(("Health", perc_health!))
+        
         self.percentages.append(("English", perc_english!))
+        
         self.percentages.append(("History", perc_hist!))
+        
         self.percentages.append(("Business", perc_business!))
         
         self.scores.append(("SAT Writing 25", Double(sat_25_write!)))

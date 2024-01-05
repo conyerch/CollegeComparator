@@ -22,6 +22,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var visitLabel: UILabel!
     
     @IBOutlet weak var endText: UITextView!
+    
+    var schoolString = ""
+    
     var school: Schools?
     
     override func viewDidLoad() {
@@ -31,8 +34,11 @@ class DetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         guard school != nil else {
+            
             return
+            
         }
         
         // set the fields
@@ -49,38 +55,75 @@ class DetailViewController: UIViewController {
         
         visitLabel.textAlignment = .center
         
-        endText.text = "Explore more statistics from " + school!.schoolName + "'s most recent data releases using the tabs below, including information on graduate earnings, most common majors, and standardized scores"
+        var satString = String(describing: school!.sat!)
         
-        textView.text = "Average Faculty Compensation: " + String(describing: school!.facSalary!) + "\n" + "Average Student SAT Score: " + String(describing: school!.sat!) + "\n" + "Latest Tution Cost: " + String(describing: school!.cost!) + "\n" + "Average Expenditure Per Student: " + String(describing: school!.ave_fte!) + "\n"
+        var tuitionString = String(describing: school!.cost!)
+        
+        var facString = String(describing: school!.facSalary!)
+        
+        var expString = String(describing: school!.ave_fte!)
+        
+        if school!.sat! == -1 {
+            
+            satString = "not reported"
+        }
+        
+        if school!.cost! == -1 {
+            
+            tuitionString = "not reported"
+        }
+        
+        if school!.cost! == 0 {
+            
+            facString = "not reported"
+        }
+        
+        if school!.cost! == 0 {
+            
+            expString = "not reported"
+        }
+        
+        endText.text = "Explore more statistics from " + school!.schoolName + "'s most recent data releases using the tabs below, including graduate earnings, common majors, and standardized scoring"
+        
+        textView.text = "Average Faculty Compensation: " + facString + "\n" + "Average Student SAT Score: " + satString + "\n" + "Latest Tution Cost: " + tuitionString + "\n" + "Average Expenditure Per Student: " + expString + "\n"
         
         textView.textAlignment = .center
         
         endText.textAlignment = .center
         
         // guard that we received a valid url
-        guard school?.web != nil else {
+        if school?.web != nil {
             
-            return
+            self.schoolString = school!.web
+            
+            // logic for testing whether website needs to have https appended
+        
+            let index = self.schoolString.index(self.schoolString.startIndex, offsetBy: 4)
+            
+            let mySubstring = schoolString[..<index]
+
+            // creating url
+            
+            if mySubstring != "http" {
+                
+                self.schoolString = "https://" + self.schoolString
+                
+            }
+            
+        }
+            
+            else {
+            
+                self.schoolString = "https://www.ed.gov/"
+            
         }
         
         // copy school website url to local variable
-        var schoolString = school!.web
         
-        // logic for testing whether website needs to have https appended
-    
-        let index = schoolString.index(schoolString.startIndex, offsetBy: 4)
+        let myURL = URL(string:self.schoolString)
         
-        let mySubstring = schoolString[..<index]
-
-        // creating url
-        
-        if mySubstring != "http" {
-            
-            schoolString = "https://" + schoolString
-        }
-        
-        let myURL = URL(string:schoolString)
         let myRequest = URLRequest(url: myURL!)
+        
         webView.load(myRequest)
         
         webView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 400)
