@@ -16,6 +16,7 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
         
         let prog = programs[Int(value)]
+        
         return prog
     }
     
@@ -30,7 +31,9 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         barChart.delegate = self
+        
         axisFormatDelegate = self
 
         // Do any additional setup after loading the view.
@@ -46,9 +49,11 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         super.viewDidLayoutSubviews()
         
-        barChart.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 200)
+        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 700)
         
         barChart.center = view.center
+        
+        barChart.extraTopOffset = 100.0
         
         barChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -79,8 +84,11 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         self.percentages = self.percentages.sorted(by: {$0.percent > $1.percent})
         
         for i in 0..<6 {
+            
             let (title, perc) = percentages[i]
+            
             programs.append(title)
+            
             percs.append(perc)
             
         }
@@ -105,6 +113,8 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         }
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        
+        chartDataSet.setColor(.purple)
         
         let chartData = BarChartData(dataSet: chartDataSet)
         

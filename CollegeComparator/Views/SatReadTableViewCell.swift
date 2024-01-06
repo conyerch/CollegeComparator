@@ -58,7 +58,9 @@ class SatReadTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Bottom Quartile SAT Reading Score Threshold")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Bottom Quartile Reading SAT Threshold")
+        
+        chartDataSet.setColor(.blue)
         
         let chartData = BarChartData(dataSet: chartDataSet)
         

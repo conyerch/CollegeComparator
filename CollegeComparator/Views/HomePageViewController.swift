@@ -227,8 +227,12 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return 50
         }
         
-        if indexPath.row == 2 {
-            return 300
+        if indexPath.row == 2 || indexPath.row == 11 {
+            return 260
+        }
+        
+        if indexPath.row == 10  {
+            return 270
         }
             
         return 280
@@ -258,7 +262,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_25_read!)))
             
-            self.healthMajor.append((colleges[i].schoolName, Double(colleges[i].perc_health!)))
+            self.healthMajor.append((colleges[i].schoolName, Double(colleges[i].perc_business!)))
             
         }
         

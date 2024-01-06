@@ -17,11 +17,14 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
         //print("at string for value")
         if value >= 0 && Int(value) < test.count{
+            
             let t = test[Int(value)]
-            //print(prog)
+            
             return t
         }
+        
         return ""
+        
     }
     
     var school: Schools?
@@ -60,9 +63,11 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         super.viewDidLayoutSubviews()
         
-        barChart.frame = CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 200)
+        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 700)
         
         barChart.center = view.center
+        
+        barChart.extraTopOffset = 100.0
         
         barChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -80,7 +85,17 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.leftAxis.enabled = false
         
-        barChart.legend.enabled = false
+        barChart.legend.enabled = true
+        
+        barChart.legend.horizontalAlignment = .center
+        
+        barChart.legend.verticalAlignment = .bottom
+        
+        barChart.legend.orientation = .horizontal
+        
+        barChart.legend.yOffset = 25.0
+        
+        barChart.legend.xOffset = 20.0
         
         barChart.drawGridBackgroundEnabled = false
         
@@ -114,16 +129,42 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
             
         var dataEntries:[BarChartDataEntry] = []
         
-        for i in 0..<forX.count{
+        var dataEntries2:[BarChartDataEntry] = []
+        
+        var dataEntries3:[BarChartDataEntry] = []
+        
+        for i in 0..<2{
                 
                 let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: test as AnyObject?)
                 
                 dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        for i in 2..<4{
+                
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: test as AnyObject?)
+                
+                dataEntries2.append(dataEntry)
+        }
         
-        let chartData = BarChartData(dataSet: chartDataSet)
+        for i in 4..<6{
+                
+                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: test as AnyObject?)
+                
+                dataEntries3.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Writing SAT")
+        
+        chartDataSet.setColor(.purple)
+        
+        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Math SAT")
+        
+        chartDataSet2.setColor(.blue)
+        
+        let chartDataSet3 = BarChartDataSet(entries: dataEntries3, label: "Reading SAT")
+        
+        let chartData = BarChartData(dataSets: [chartDataSet, chartDataSet2, chartDataSet3])
         
         barChart.data = chartData
         

@@ -59,7 +59,9 @@ class EngineeringTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFor
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Engineering Students")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Engineering Majors")
+        
+        chartDataSet.setColor(.purple)
         
         let chartData = BarChartData(dataSet: chartDataSet)
         

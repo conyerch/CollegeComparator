@@ -59,7 +59,7 @@ class HealthTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatte
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Health and Medical Students")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Business Majors")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         

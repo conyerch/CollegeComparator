@@ -59,7 +59,9 @@ class CompSciTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Computer Science Students")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Percent Computer Science Majors")
+        
+        chartDataSet.setColor(.blue)
         
         let chartData = BarChartData(dataSet: chartDataSet)
         

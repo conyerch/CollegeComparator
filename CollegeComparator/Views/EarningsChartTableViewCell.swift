@@ -68,6 +68,8 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Highest Median 10 Year Earnings")
         
+        chartDataSet.setColor(.purple)
+        
         let chartData = BarChartData(dataSet: chartDataSet)
         
         Earnings_10yr.data = chartData
@@ -84,7 +86,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.xAxis.wordWrapEnabled = true
         
-        Earnings_10yr.xAxis.labelWidth = 16
+        Earnings_10yr.xAxis.labelWidth = 14
         
         Earnings_10yr.extraBottomOffset = CGFloat(60.0)
         

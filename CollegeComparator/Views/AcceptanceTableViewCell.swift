@@ -60,6 +60,8 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Lowest Acceptance Rate")
         
+        chartDataSet.setColor(.blue)
+        
         let chartData = BarChartData(dataSet: chartDataSet)
         
         AcceptanceChart.data = chartData

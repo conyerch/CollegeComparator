@@ -14,8 +14,10 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
     var earn = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
         //print(prog)
+        
         return prog
     }
     
@@ -28,7 +30,9 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         barChart.delegate = self
+        
         axisFormatDelegate = self
 
         // Do any additional setup after loading the view.
@@ -42,9 +46,11 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         super.viewDidLayoutSubviews()
         
-        barChart.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height - 250)
+        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 700)
         
         barChart.center = view.center
+        
+        barChart.extraTopOffset = 100.0
         
         barChart.xAxis.labelPosition = XAxis.LabelPosition.bottom
         
@@ -58,7 +64,17 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         barChart.leftAxis.enabled = false
         
-        barChart.legend.enabled = false
+        barChart.legend.enabled = true
+        
+        barChart.legend.horizontalAlignment = .center
+        
+        barChart.legend.verticalAlignment = .bottom
+        
+        barChart.legend.yOffset = 25.0
+        
+        barChart.legend.xOffset = 22.0
+        
+        barChart.legend.orientation = .horizontal
         
         barChart.drawGridBackgroundEnabled = false
         
@@ -70,23 +86,28 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         view.addSubview(barChart)
         
-        
         programs.append("25th Percentile 6 Years")
+        
         earn.append(Double(school!.quar_6yr!))
         
         programs.append("Median 6 Years")
+        
         earn.append(Double(school!.med_6yr!))
         
         programs.append("75th Percentile 6 Years")
+        
         earn.append(Double(school!.thir_6yr!))
         
         programs.append("25th Percentile 10 Years")
+        
         earn.append(Double(school!.quar_10yr!))
         
         programs.append("Median 10 Years")
+        
         earn.append(Double(school!.med_10yr!))
         
         programs.append("75th Percentile 10 Years")
+        
         earn.append(Double(school!.thir_10yr!))
             
         setChart(dataEntryX: programs, dataEntryY: earn)
@@ -100,24 +121,41 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
             
         var dataEntries:[BarChartDataEntry] = []
         
-            for i in 0..<forX.count{
+        var dataEntries2:[BarChartDataEntry] = []
+        
+        for i in 0..<3{
                 
-                let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: programs as AnyObject?)
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: programs as AnyObject?)
                 
                 //print(dataEntry)
                 
-                dataEntries.append(dataEntry)
-            }
+            dataEntries.append(dataEntry)
+        }
         
-            let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Program")
+        for i in 3..<6{
+            
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(forY[i]) , data: programs as AnyObject?)
+            
+            //print(dataEntry)
+            
+            dataEntries2.append(dataEntry)
+        }
         
-            let chartData = BarChartData(dataSet: chartDataSet)
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "6 Year Earnings Distribution")
         
-            barChart.data = chartData
+        chartDataSet.setColor(.purple)
         
-            let xAxisValue = barChart.xAxis
+        let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "10 Year Earnings Distribution")
         
-            xAxisValue.valueFormatter = axisFormatDelegate
+        chartDataSet2.setColor(.blue)
+        
+        let chartData = BarChartData(dataSets: [chartDataSet, chartDataSet2])
+        
+        barChart.data = chartData
+        
+        let xAxisValue = barChart.xAxis
+        
+        xAxisValue.valueFormatter = axisFormatDelegate
         
         }
 }

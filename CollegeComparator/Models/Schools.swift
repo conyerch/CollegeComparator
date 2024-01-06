@@ -234,17 +234,17 @@ struct Schools: Decodable {
         
         self.percentages.append(("Business", perc_business!))
         
-        self.scores.append(("SAT Writing 25", Double(sat_25_write!)))
+        self.scores.append(("Bottom Quartile", Double(sat_25_write!)))
         
-        self.scores.append(("SAT Writing 75", Double(sat_75_write!)))
+        self.scores.append(("Top Quartile", Double(sat_75_write!)))
    
-        self.scores.append(("SAT Math 25", Double(sat_25_math!)))
+        self.scores.append(("Bottom Quartile", Double(sat_25_math!)))
         
-        self.scores.append(("SAT Math 75", Double(sat_75_math!)))
+        self.scores.append(("Top Quartile", Double(sat_75_math!)))
         
-        self.scores.append(("SAT Reading 25", Double(sat_25_read!)))
+        self.scores.append(("Bottom Quartile", Double(sat_25_read!)))
         
-        self.scores.append(("SAT Reading 75", Double(sat_75_read!)))
+        self.scores.append(("Top Quartile", Double(sat_75_read!)))
         
        }
     
