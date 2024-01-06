@@ -33,6 +33,7 @@
 		B918CA002B35127300CA80CA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B918C9FF2B35127300CA80CA /* Charts.framework */; };
 		B918CA062B35451500CA80CA /* tabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918CA052B35451500CA80CA /* tabBarViewController.swift */; };
 		B918CA082B354A3C00CA80CA /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B918CA072B354A3C00CA80CA /* HomePageViewController.swift */; };
+		B91938E22B48FFD60095E1A3 /* HealthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91938E12B48FFD60095E1A3 /* HealthTableViewCell.swift */; };
 		B99A9B722B3BA0DD0080A5EE /* EngineeringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99A9B712B3BA0DD0080A5EE /* EngineeringTableViewCell.swift */; };
 		B99A9B742B3BA0E90080A5EE /* SatMathTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99A9B732B3BA0E90080A5EE /* SatMathTableViewCell.swift */; };
 		B9B8BDB22B3A244E00C31C6E /* TrendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B8BDB12B3A244E00C31C6E /* TrendsTableViewCell.swift */; };
@@ -71,6 +72,7 @@
 		B918C9FF2B35127300CA80CA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
 		B918CA052B35451500CA80CA /* tabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarViewController.swift; sourceTree = "<group>"; };
 		B918CA072B354A3C00CA80CA /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		B91938E12B48FFD60095E1A3 /* HealthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTableViewCell.swift; sourceTree = "<group>"; };
 		B99A9B712B3BA0DD0080A5EE /* EngineeringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineeringTableViewCell.swift; sourceTree = "<group>"; };
 		B99A9B732B3BA0E90080A5EE /* SatMathTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatMathTableViewCell.swift; sourceTree = "<group>"; };
 		B9B8BDB12B3A244E00C31C6E /* TrendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				B99A9B732B3BA0E90080A5EE /* SatMathTableViewCell.swift */,
 				B9FB3EAE2B3BD0F000F197C1 /* CompSciTableViewCell.swift */,
 				B9FB3EB02B3BD0FB00F197C1 /* SatReadTableViewCell.swift */,
+				B91938E12B48FFD60095E1A3 /* HealthTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				B918C9CD2B35015500CA80CA /* SceneDelegate.swift in Sources */,
 				B918C9E52B35029900CA80CA /* Constants.swift in Sources */,
 				B90AC76F2B35DCE200880AFF /* Trends.swift in Sources */,
+				B91938E22B48FFD60095E1A3 /* HealthTableViewCell.swift in Sources */,
 				B99A9B742B3BA0E90080A5EE /* SatMathTableViewCell.swift in Sources */,
 				B918C9F32B35045A00CA80CA /* DetailViewController.swift in Sources */,
 				B9EA8FC32B389554005A7443 /* LabelTableViewCell.swift in Sources */,

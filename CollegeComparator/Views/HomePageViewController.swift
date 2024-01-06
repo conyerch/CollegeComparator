@@ -41,6 +41,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var school7 = [String]()
     
     var readScores = [Double]()
+    
+    var school8 = [String]()
+    
+    var health_perc = [Double]()
 
     var model = Model()
     
@@ -59,6 +63,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var compSciMajor:[(name:String, perc:Double)] = []
     
     var satRead:[(name:String, sat:Double)] = []
+    
+    var healthMajor:[(name:String, perc:Double)] = []
     
     override func viewDidLoad() {
         
@@ -82,7 +88,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 11
+        return 12
         
     }
     
@@ -167,13 +173,22 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if indexPath.row == 8 {
             
+            let cell = tableView.dequeueReusableCell(withIdentifier: "health") as! HealthTableViewCell
+            cell.configure(schools: school8, healthPercent: health_perc)
+            cell.contentView.addSubview(cell.HealthChart)
+            return cell
+            
+            }
+        
+        if indexPath.row == 9 {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "scores") as! TrendsTableViewCell
             cell.contentView.addSubview(cell.trendsLabel)
             return cell
             
             }
         
-        if indexPath.row == 9 {
+        if indexPath.row == 10 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MathScores") as! SatMathTableViewCell
             cell.configure(schools: school5, mathScores: mathScores)
@@ -182,7 +197,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             }
         
-        if indexPath.row == 10 {
+        if indexPath.row == 11 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadScores") as! SatReadTableViewCell
             cell.configure(schools: school7, mathScores: readScores)
@@ -208,7 +223,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             return 120
         }
         
-        if (indexPath.row == 1 || indexPath.row == 5 || indexPath.row == 8) {
+        if (indexPath.row == 1 || indexPath.row == 5 || indexPath.row == 9) {
             return 50
         }
         
@@ -243,6 +258,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_25_read!)))
             
+            self.healthMajor.append((colleges[i].schoolName, Double(colleges[i].perc_health!)))
+            
         }
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
@@ -258,6 +275,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         self.satRead = self.satRead.sorted(by: {$0.sat > $1.sat})
         
         self.compSciMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
+        
+        self.healthMajor = self.healthMajor.sorted(by: {$0.perc > $1.perc})
         
         for i in 0..<6 {
             
@@ -275,6 +294,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let (s7, rs) = self.satRead[i]
             
+            let (s8, hs) = self.healthMajor[i]
+            
             self.school1.append(s1)
             
             self.school2.append(s2)
@@ -289,6 +310,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.school7.append(s7)
             
+            self.school8.append(s8)
+            
             self.earn.append(Double(e))
             
             self.accR.append(Double(a))
@@ -302,6 +325,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             self.compSci.append(Double(csp))
             
             self.readScores.append(Double(rs))
+            
+            self.health_perc.append(Double(hs))
             
         }
     
