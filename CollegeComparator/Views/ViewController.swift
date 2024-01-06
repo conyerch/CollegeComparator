@@ -15,19 +15,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     var model = Model()
+    
     var colleges = [Schools]()
+    
     var filteredColleges = [Schools]()
 
     override func viewDidLoad() {
     
         super.viewDidLoad()
+        
         initSearchController()
         
         // set self to data source and delegate
         tableView.dataSource = self
+        
         tableView.delegate = self
         // Do any additional setup after loading the view.
         model.delegate = self
+        
         model.getSchools()
         
     }

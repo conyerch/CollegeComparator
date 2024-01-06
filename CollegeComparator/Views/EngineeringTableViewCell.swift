@@ -11,13 +11,15 @@ import Charts
 class EngineeringTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatter {
     
     var programs = [String]()
+    
     var percents = [Double]()
     
     @IBOutlet weak var EngineeringChart: BarChartView!
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+        
         return prog
     }
     
@@ -25,13 +27,17 @@ class EngineeringTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFor
     weak var axisFormatDelegate: AxisValueFormatter?
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
+        
         EngineeringChart.delegate = self
+        
         axisFormatDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -40,6 +46,7 @@ class EngineeringTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFor
     func configure(schools:[String], engineeringPercent:[Double]) {
         
         programs = schools
+        
         percents = engineeringPercent
         
         guard schools.count == 6 else {

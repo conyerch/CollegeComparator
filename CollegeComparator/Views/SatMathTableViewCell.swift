@@ -11,11 +11,13 @@ import Charts
 class SatMathTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatter {
     
     var programs = [String]()
+    
     var scores = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+        
         return prog
     }
     
@@ -26,11 +28,14 @@ class SatMathTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         ScoreChart.delegate = self
+        
         axisFormatDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -39,6 +44,7 @@ class SatMathTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
     func configure(schools:[String], mathScores:[Double]) {
         
         programs = schools
+        
         scores = mathScores
         
         guard schools.count == 6 else {

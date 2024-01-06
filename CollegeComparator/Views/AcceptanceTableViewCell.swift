@@ -14,8 +14,9 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
     var acceptances = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+        
         return prog
     }
     
@@ -27,6 +28,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         super.awakeFromNib()
         // Initialization code
         AcceptanceChart.delegate = self
+        
         axisFormatDelegate = self
     }
 

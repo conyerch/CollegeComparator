@@ -11,6 +11,7 @@ import UIKit
 class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter {
     
     var programs = [String]()
+    
     var earn = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
@@ -73,6 +74,8 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         barChart.legend.yOffset = 25.0
         
         barChart.legend.xOffset = 22.0
+        
+        //barChart.rightAxis.spaceBottom = 0.0
         
         barChart.legend.orientation = .horizontal
         

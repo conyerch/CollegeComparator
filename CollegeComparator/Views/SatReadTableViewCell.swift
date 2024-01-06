@@ -11,26 +11,32 @@ import Charts
 class SatReadTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatter {
     
     var programs = [String]()
+    
     var scores = [Double]()
     
     @IBOutlet weak var readChart: BarChartView!
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+ 
         return prog
     }
     
     weak var axisFormatDelegate: AxisValueFormatter?
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
+        
         readChart.delegate = self
+        
         axisFormatDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -39,6 +45,7 @@ class SatReadTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
     func configure(schools:[String], mathScores:[Double]) {
         
         programs = schools
+        
         scores = mathScores
         
         guard schools.count == 6 else {
@@ -52,8 +59,6 @@ class SatReadTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         for i in 0..<6{
                 
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(mathScores[i]))
-                
-                //print(dataEntry)
                 
                 dataEntries.append(dataEntry)
             }

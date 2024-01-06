@@ -75,7 +75,7 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.xAxis.labelWidth = 22
         
-        barChart.rightAxis.axisMinimum = 400.0
+        barChart.rightAxis.spaceBottom = 0.0
         
         //barChart.rightAxis.axisMaximum = 850.0
         
@@ -158,11 +158,17 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         chartDataSet.setColor(.purple)
         
+        chartDataSet.axisDependency = .right
+        
         let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "Math SAT")
         
         chartDataSet2.setColor(.blue)
         
+        chartDataSet2.axisDependency = .right
+        
         let chartDataSet3 = BarChartDataSet(entries: dataEntries3, label: "Reading SAT")
+        
+        chartDataSet3.axisDependency = .right
         
         let chartData = BarChartData(dataSets: [chartDataSet, chartDataSet2, chartDataSet3])
         

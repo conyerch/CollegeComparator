@@ -65,6 +65,8 @@ class BarViewController2: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.extraBottomOffset = CGFloat(60.0)
         
+        //barChart.rightAxis.spaceBottom = 0.0
+        
         barChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
         
         barChart.leftAxis.enabled = false

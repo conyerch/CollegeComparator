@@ -14,9 +14,9 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     var earn = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
-        //print(value)
+        
         let prog = programs[Int(value)]
-        //print(prog)
+        
         return prog
     }
     
@@ -30,7 +30,9 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         super.awakeFromNib()
         // Initialization code
         Earnings_10yr.delegate = self
+        
         axisFormatDelegate = self
+        
         EarningsText.text = "Highest Median Earnings 10 Years After Graduation"
         
     }

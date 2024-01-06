@@ -18,8 +18,9 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
     weak var axisFormatDelegate: AxisValueFormatter?
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+        
         return prog
     }
     
@@ -27,6 +28,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         super.awakeFromNib()
         // Initialization code
         CostPerChart.delegate = self
+        
         axisFormatDelegate = self
     }
 
@@ -39,6 +41,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
     func configure(schools:[String], cp:[Double]) {
         
         programs = schools
+        
         costper = cp
         
         guard schools.count == 6 else {

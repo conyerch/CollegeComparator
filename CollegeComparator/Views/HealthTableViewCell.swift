@@ -11,13 +11,15 @@ import Charts
 class HealthTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatter {
     
     var programs = [String]()
+    
     var percents = [Double]()
     
     @IBOutlet weak var HealthChart: BarChartView!
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        
         let prog = programs[Int(value)]
-        //print(prog)
+
         return prog
     }
     
@@ -25,13 +27,17 @@ class HealthTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatte
     weak var axisFormatDelegate: AxisValueFormatter?
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
+        
         HealthChart.delegate = self
+        
         axisFormatDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -40,6 +46,7 @@ class HealthTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatte
     func configure(schools:[String], healthPercent:[Double]) {
         
         programs = schools
+        
         percents = healthPercent
         
         guard schools.count == 6 else {
@@ -53,8 +60,6 @@ class HealthTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatte
         for i in 0..<6{
                 
             let dataEntry = BarChartDataEntry(x: Double(i), y: Double(healthPercent[i]))
-                
-                //print(dataEntry)
                 
                 dataEntries.append(dataEntry)
             }
