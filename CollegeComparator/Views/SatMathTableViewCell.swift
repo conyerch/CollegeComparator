@@ -80,7 +80,7 @@ class SatMathTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         ScoreChart.extraBottomOffset = CGFloat(60.0)
         
-        ScoreChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        ScoreChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         ScoreChart.leftAxis.enabled = false
         

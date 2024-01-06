@@ -63,6 +63,8 @@ class DetailViewController: UIViewController {
         
         var expString = String(describing: school!.ave_fte!)
         
+        var accString = String(describing: Int(school!.acc_rate! * 100))
+        
         if school!.sat! == -1 {
             
             satString = "not reported"
@@ -83,9 +85,14 @@ class DetailViewController: UIViewController {
             expString = "not reported"
         }
         
+        if school!.acc_rate! == 1.0 {
+            
+            accString = "not reported"
+        }
+        
         endText.text = "Explore more statistics from " + school!.schoolName + "'s most recent data releases using the tabs below, including graduate earnings, common majors, and standardized scoring"
         
-        textView.text = "Average Faculty Compensation: " + facString + "\n" + "Average Student SAT Score: " + satString + "\n" + "Latest Tution Cost: " + tuitionString + "\n" + "Average Expenditure Per Student: " + expString + "\n"
+        textView.text = "Acceptance Rate: " + accString + "%" + "\n" + "Average SAT Score: " + satString + "\n" + "Tution Cost: $" + tuitionString + "\n" + "Average Expenditure Per Student: $" + expString + "\n" + "Average Faculty Compensation: $" + facString
         
         textView.textAlignment = .center
         

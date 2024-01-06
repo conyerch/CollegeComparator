@@ -80,7 +80,7 @@ class AcceptanceTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueForm
         
         AcceptanceChart.extraBottomOffset = CGFloat(60.0)
         
-        AcceptanceChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        AcceptanceChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         AcceptanceChart.leftAxis.enabled = false
         

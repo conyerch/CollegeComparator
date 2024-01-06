@@ -14,6 +14,7 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     var earn = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
+        //print(value)
         let prog = programs[Int(value)]
         //print(prog)
         return prog
@@ -42,8 +43,11 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
     
     func configure(schools:[String], earnings:[Double]) {
         
-        programs = schools
-        earn = earnings
+        self.programs = schools
+        
+        self.earn = earnings
+        
+        //print(schools)
         
         guard schools.count == 6 else {
             return
@@ -80,11 +84,11 @@ class EarningsChartTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueF
         
         Earnings_10yr.xAxis.wordWrapEnabled = true
         
-        Earnings_10yr.xAxis.labelWidth = 22
+        Earnings_10yr.xAxis.labelWidth = 16
         
         Earnings_10yr.extraBottomOffset = CGFloat(60.0)
         
-        Earnings_10yr.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        Earnings_10yr.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         Earnings_10yr.leftAxis.enabled = false
         

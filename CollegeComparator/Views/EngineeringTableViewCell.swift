@@ -81,7 +81,7 @@ class EngineeringTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFor
         
         EngineeringChart.extraBottomOffset = CGFloat(60.0)
         
-        EngineeringChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        EngineeringChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         EngineeringChart.leftAxis.enabled = false
         

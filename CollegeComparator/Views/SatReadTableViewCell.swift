@@ -80,7 +80,7 @@ class SatReadTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         readChart.extraBottomOffset = CGFloat(60.0)
         
-        readChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        readChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         readChart.leftAxis.enabled = false
         

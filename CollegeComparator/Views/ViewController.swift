@@ -35,8 +35,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func initSearchController() {
         
         searchController.loadViewIfNeeded()
+        
         searchController.searchResultsUpdater = self
+        
         navigationItem.searchController = searchController
+        
         searchController.searchBar.delegate = self
         
     }
@@ -44,13 +47,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLayoutSubviews() {
         
         searchController.isActive = true
+        
         super.viewDidLayoutSubviews()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // make sure a row is selected
         guard tableView.indexPathForSelectedRow != nil else {
+            
             return
+            
         }
 
         // connect to school that was selected by user
@@ -60,10 +66,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let selectedSchool:Schools!
         
         if(searchController.isActive){
+            
             selectedSchool = self.filteredColleges[indexPath.row]
         }
+        
         else {
+            
             selectedSchool = self.colleges[indexPath.row]
+            
         }
         
         let tabCtrl = segue.destination as! UITabBarController
@@ -84,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         navVC2.title = "Top Degrees"
         
-        navVC3.title = "SAT Percentile"
+        navVC3.title = "SAT Percentiles"
         
         // Assuming home view controller is in the first tab, else update the array index
         
@@ -105,8 +115,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if(searchController.isActive) {
+            
             return filteredColleges.count
+            
         }
+        
         return colleges.count
     }
     
@@ -121,10 +134,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let school:Schools!
         
         if(searchController.isActive){
+            
             school = self.filteredColleges[indexPath.row]
         }
+        
         else {
+            
             school = self.colleges[indexPath.row]
+            
         }
         
         cell.setCell(school)
@@ -137,12 +154,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func getSchools(_ schools: [Schools]) {
+        
         self.colleges = schools
+        
         tableView.reloadData()
+        
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        
         let searchBar = searchController.searchBar
+        
         let searchText = searchBar.text!
         
         filterForSearchText(searchText: searchText)

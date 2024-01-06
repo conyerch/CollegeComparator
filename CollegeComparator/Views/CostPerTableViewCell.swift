@@ -80,7 +80,7 @@ class CostPerTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         CostPerChart.extraBottomOffset = CGFloat(60.0)
         
-        CostPerChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        CostPerChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         CostPerChart.leftAxis.enabled = false
         

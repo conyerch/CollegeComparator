@@ -81,7 +81,7 @@ class CompSciTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
         
         CompSciChart.extraBottomOffset = CGFloat(60.0)
         
-        CompSciChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
+        CompSciChart.xAxis.labelFont = UIFont(name: "Verdana", size: 7.0)!
         
         CompSciChart.leftAxis.enabled = false
         

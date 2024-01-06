@@ -83,6 +83,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 11
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -190,8 +191,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             }
         
-        
-            //... some other types of cells
         return cell
         
     }
@@ -231,47 +230,77 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         for i in 0..<self.colleges.count {
         
             self.accRates.append((colleges[i].schoolName, colleges[i].acc_rate!))
+            
             self.med_earn.append((colleges[i].schoolName, colleges[i].med_10yr!))
+            
             self.earnPerCost.append((colleges[i].schoolName, Double(Double(colleges[i].med_10yr!) / Double(colleges[i].cost!))))
+            
             self.satMath.append((colleges[i].schoolName, Double(colleges[i].sat_75_math!)))
+            
             self.engineeringMajor.append((colleges[i].schoolName, colleges[i].perc_engin!))
+            
             self.compSciMajor.append((colleges[i].schoolName, colleges[i].perc_comp!))
+            
             self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_75_read!)))
             
         }
         
         self.accRates = self.accRates.sorted(by: {$0.acc < $1.acc})
-        self.med_earn = self.med_earn.sorted(by: {$0.earn > $1.earn})
-        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer > $1.earnPer})
-        self.satMath = self.satMath.sorted(by: {$0.sat > $1.sat})
-        self.engineeringMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
-        self.satRead = self.satRead.sorted(by: {$0.sat > $1.sat})
-        self.compSciMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
         
-        //print(accRates)
+        self.med_earn = self.med_earn.sorted(by: {$0.earn > $1.earn})
+        
+        self.earnPerCost = self.earnPerCost.sorted(by: {$0.earnPer > $1.earnPer})
+        
+        self.satMath = self.satMath.sorted(by: {$0.sat > $1.sat})
+        
+        self.engineeringMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
+        
+        self.satRead = self.satRead.sorted(by: {$0.sat > $1.sat})
+        
+        self.compSciMajor = self.compSciMajor.sorted(by: {$0.perc > $1.perc})
         
         for i in 0..<6 {
             
             let (s1, e) = self.med_earn[i]
+            
             let (s2, a) = self.accRates[i]
+            
             let (s3, cp) = self.earnPerCost[i]
+            
             let (s4, ep) = self.engineeringMajor[i]
+            
             let (s5, ms) = self.satMath[i]
+            
             let (s6, csp) = self.compSciMajor[i]
+            
             let (s7, rs) = self.satRead[i]
+            
             self.school1.append(s1)
+            
             self.school2.append(s2)
+            
             self.school3.append(s3)
+            
             self.school4.append(s4)
+            
             self.school5.append(s5)
+            
             self.school6.append(s6)
+            
             self.school7.append(s7)
+            
             self.earn.append(Double(e))
+            
             self.accR.append(Double(a))
+            
             self.CPT.append(Double(cp))
+            
             self.eng_perc.append(Double(ep))
+            
             self.mathScores.append(Double(ms))
+            
             self.compSci.append(Double(csp))
+            
             self.readScores.append(Double(rs))
             
         }

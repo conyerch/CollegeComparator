@@ -59,6 +59,7 @@ class Model {
                 else {
                     
                     self.schools = response.results!
+                    
                     self.ready = true
                     
                 }
@@ -102,6 +103,7 @@ class Model {
                 else {
                     
                     self.schools = response.results!
+                    
                     self.ready = true
                 }
                 
@@ -116,6 +118,7 @@ class Model {
         }
         
         dataTask.resume()
+        
         dataTask2.resume()
             
         }

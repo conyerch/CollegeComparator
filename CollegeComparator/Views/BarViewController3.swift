@@ -11,6 +11,7 @@ import UIKit
 class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatter {
     
     var test = [String]()
+    
     var scores = [Double]()
     
     func stringForValue(_ value: Double, axis: Charts.AxisBase?) -> String {
@@ -35,9 +36,13 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         //print("at view did load")
         
         barChart.noDataText = ""
+        
         super.viewDidLoad()
+        
         barChart.delegate = self
+        
         axisFormatDelegate = self
+        
         self.view.backgroundColor = UIColor.white
 
         // Do any additional setup after loading the view.
@@ -65,7 +70,9 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.xAxis.labelWidth = 22
         
-        barChart.leftAxis.axisMinimum = 200
+        barChart.rightAxis.axisMinimum = 400.0
+        
+        //barChart.rightAxis.axisMaximum = 850.0
         
         barChart.extraBottomOffset = CGFloat(60.0)
         
@@ -86,7 +93,9 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         for i in 0..<6 {
             
             let (title, score) = test_scores[i]
+            
             test.append(title)
+            
             scores.append(score)
             
         }
