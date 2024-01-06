@@ -235,13 +235,13 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.earnPerCost.append((colleges[i].schoolName, Double(Double(colleges[i].med_10yr!) / Double(colleges[i].cost!))))
             
-            self.satMath.append((colleges[i].schoolName, Double(colleges[i].sat_75_math!)))
+            self.satMath.append((colleges[i].schoolName, Double(colleges[i].sat_25_math!)))
             
             self.engineeringMajor.append((colleges[i].schoolName, colleges[i].perc_engin!))
             
             self.compSciMajor.append((colleges[i].schoolName, colleges[i].perc_comp!))
             
-            self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_75_read!)))
+            self.satRead.append((colleges[i].schoolName, Double(colleges[i].sat_25_read!)))
             
         }
         

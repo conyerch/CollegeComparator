@@ -58,7 +58,7 @@ class SatMathTableViewCell: UITableViewCell, ChartViewDelegate, AxisValueFormatt
                 dataEntries.append(dataEntry)
             }
         
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Top Quartile SAT Math Score Threshold")
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Bottom Quartile SAT Math Score Threshold")
         
         let chartData = BarChartData(dataSet: chartDataSet)
         
