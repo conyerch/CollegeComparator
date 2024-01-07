@@ -42,8 +42,6 @@ class CollegeTableViewCell: UITableViewCell {
         
         self.collegeName.textAlignment = .center
         
-        
-        
         if school!.sat! == -1 {
             
             self.medSAT.text = "Median SAT Score: Unavailable"
