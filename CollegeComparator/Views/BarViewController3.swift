@@ -77,7 +77,9 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.rightAxis.spaceBottom = 0.0
         
-        //barChart.rightAxis.axisMaximum = 850.0
+        barChart.rightAxis.axisMinimum = 0.0
+        
+        barChart.rightAxis.axisMaximum = 800.0
         
         barChart.extraBottomOffset = CGFloat(60.0)
         
