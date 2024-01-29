@@ -59,11 +59,17 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         barChart.xAxis.labelWidth = 22
         
+        barChart.rightAxis.spaceBottom = 0.0
+        
+        barChart.xAxis.yOffset = 0.0
+        
         barChart.extraBottomOffset = CGFloat(60.0)
         
         barChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
         
         barChart.leftAxis.enabled = false
+        
+        // barChart.xAxis.drawAxisLineEnabled = false
         
         barChart.legend.enabled = true
         
@@ -74,8 +80,6 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         barChart.legend.yOffset = 25.0
         
         barChart.legend.xOffset = 22.0
-        
-        //barChart.rightAxis.spaceBottom = 0.0
         
         barChart.legend.orientation = .horizontal
         
@@ -148,9 +152,13 @@ class BarViewController: UIViewController, ChartViewDelegate, AxisValueFormatter
         
         chartDataSet.setColor(.purple)
         
+        chartDataSet.axisDependency = .right
+        
         let chartDataSet2 = BarChartDataSet(entries: dataEntries2, label: "10 Year Earnings Distribution")
         
         chartDataSet2.setColor(.blue)
+        
+        chartDataSet2.axisDependency = .right
         
         let chartData = BarChartData(dataSets: [chartDataSet, chartDataSet2])
         

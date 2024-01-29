@@ -85,6 +85,8 @@ class BarViewController3: UIViewController, ChartViewDelegate, AxisValueFormatte
         
         barChart.xAxis.labelFont = UIFont(name: "Verdana", size: 8.0)!
         
+        barChart.backgroundColor = .black
+        
         barChart.leftAxis.enabled = false
         
         barChart.legend.enabled = true

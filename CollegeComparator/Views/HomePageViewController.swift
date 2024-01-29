@@ -110,6 +110,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Leaders") as! LabelTableViewCell
             cell.contentView.addSubview(cell.leaders)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -119,8 +120,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "Earnings_10yr") as! EarningsChartTableViewCell
             cell.Earnings_10yr.noDataText = ""
             cell.configure(schools:school1, earnings: earn)
+            cell.Earnings_10yr.dragEnabled = false
             cell.contentView.addSubview(cell.EarningsText)
             cell.contentView.addSubview(cell.Earnings_10yr)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -130,7 +133,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "Acceptance_rate") as! AcceptanceTableViewCell
             cell.AcceptanceChart.noDataText = ""
             cell.configure(schools: school2, acceptance: accR)
+            cell.AcceptanceChart.dragEnabled = false
             cell.contentView.addSubview(cell.AcceptanceChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -140,7 +145,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cost_per") as! CostPerTableViewCell
             cell.CostPerChart.noDataText = ""
             cell.configure(schools: school3, cp: CPT)
+            cell.CostPerChart.dragEnabled = false
             cell.contentView.addSubview(cell.CostPerChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -149,6 +156,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "trends") as! TrendsTableViewCell
             cell.contentView.addSubview(cell.trendsLabel)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -157,7 +165,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "engineering") as! EngineeringTableViewCell
             cell.configure(schools: school4, engineeringPercent: eng_perc)
+            cell.EngineeringChart.dragEnabled = false
             cell.contentView.addSubview(cell.EngineeringChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -166,7 +176,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "computerScience") as! CompSciTableViewCell
             cell.configure(schools: school6, engineeringPercent: compSci)
+            cell.CompSciChart.dragEnabled = false
             cell.contentView.addSubview(cell.CompSciChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -175,7 +187,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "health") as! HealthTableViewCell
             cell.configure(schools: school8, healthPercent: health_perc)
+            cell.HealthChart.dragEnabled = false
             cell.contentView.addSubview(cell.HealthChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -184,6 +198,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "scores") as! TrendsTableViewCell
             cell.contentView.addSubview(cell.trendsLabel)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -192,7 +207,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "MathScores") as! SatMathTableViewCell
             cell.configure(schools: school5, mathScores: mathScores)
+            cell.ScoreChart.dragEnabled = false
             cell.contentView.addSubview(cell.ScoreChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
@@ -201,7 +218,10 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReadScores") as! SatReadTableViewCell
             cell.configure(schools: school7, mathScores: readScores)
+            cell.readChart.dragEnabled = false
+            cell.readChart.dragEnabled = false
             cell.contentView.addSubview(cell.readChart)
+            cell.userInteractionEnabledWhileDragging = false
             return cell
             
             }
